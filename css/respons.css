@@ -1,0 +1,395 @@
+@media screen and (max-width: 1000px) {
+    /* HEADER */
+
+    .header_menu {
+        height: 120vh;
+    }
+
+    .menu-btn-6 {
+        display: block;
+    }
+
+    .lang_btn {
+        display: none;
+    }
+
+    /* .header_wrapper {
+        background: none;
+    } */
+
+    .header_middle_side {
+        display: none;
+    }
+
+    .header_left_side {
+        width: 80%;
+    }
+
+    .header_left_side a img {
+        width: 12%;
+    }
+
+    .header_right_side {
+        width: 20%;
+    }
+
+    /* PREVIEW SECTION RESPONS */
+
+    .preview_section_wrapper {
+        margin-bottom: 80px;
+    }
+
+    .preview_cont {
+        width: 85%;
+    }
+
+    .preview_cont_wrapper {
+        height: 100%;
+    }
+
+    .preview_title h1 {
+        font-size: 4vw;
+    }
+
+    .preview_butn a button {
+        width: 60%;
+    }
+
+    .preview_arrow {
+        display: none;
+    }
+
+    /* AB MAIN SECTION RESPONSE */
+
+    .ab_main_wrapper {
+        margin-bottom: 80px;
+    }
+
+    .ab_main {
+        flex-direction: column-reverse;
+    }
+
+    .ab_right_text_wrapper {
+        flex-direction: column;
+    }
+
+    .ab_right_text {
+        padding-left: 0px;
+    }
+    
+    .ab_main_left {
+        width: 100%;
+    }
+
+    .ab_main_right {
+        width: 100%;
+        margin-bottom: 32px;
+    }
+
+    .ab_main_title {
+        width: 100%;
+    }
+
+    .ab_main_title h2 {
+        font-size: 10vw;
+    }
+
+    .ab_main_desc {
+        width: 100%;
+    }
+
+    /* CHIEF SECTION RESPONSIVNESS */
+
+    .chief_section {
+        flex-direction: column;
+    }
+
+    .chief_section_left {
+        width: 100%;
+    }
+
+    .chief_quote {
+        width: 14%;
+    }
+
+    .chief_text {
+        width: 100%;
+    }
+
+    .chief_desc {
+        justify-content: start;
+    }
+
+    .chief_section_right {
+        width: 100%;
+    }
+
+    .chief_name {
+        align-items: end;
+    }
+
+    .chief_name_text p {
+        font-size: 14vw;
+    }
+
+    /* Slider Text */
+
+    .slider_text {
+        width: 100%;
+    }
+
+    .slider_text p {
+        font-size: 4vw;
+    }
+
+    .owl-nav {
+        padding: 0px 10px 0px 10px;
+    }
+
+    /* FOOTER RESPONSIVENESS */
+
+    .footer_wrapper {
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+
+    .footer_left_side {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer_right_side {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .footer_elem_title {
+        text-align: center;
+    }
+
+    .footer_right_side p {
+        margin: 0 auto;
+    }
+
+    .media_links {
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .media_links a {
+        width: 12%;
+    }
+
+    .lower_footer {
+        padding-left: 0px;
+    }
+
+    /* --------ABOUT PAGE RESPONSE-------- */
+    
+    .sep_ab_row {
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 80px;
+        flex-direction: column;
+    }
+
+    .ninty_width {
+        flex-direction: column-reverse;
+    }
+
+    .flex_column {
+        flex-direction: column;
+    }
+
+    .sep_ab_cont_block {
+        width: 100% !important;
+    }
+
+    .ab_main_reserv_btn {
+        text-align: center;
+    }
+
+    .ab_main_reserv_btn a button {
+        font-size: 3vw;
+        padding: 5% 10% 5% 10%;
+    }
+
+    .venue_slider_section {
+        margin-bottom: 80px;
+    }
+
+    .venue_slider_content_wrapper {
+        height: 50vh;
+    }
+
+    .venue_slider_content {
+        width: 90%;
+        left: 0; 
+        right: 0; 
+        margin-left: auto; 
+        margin-right: auto; 
+    }
+
+    .venue_slider_title p {
+        font-size: 4.5vw;
+    }
+
+    .venue_slider_text p {
+        font-size: 3.5vw;
+        line-height: 25px;
+        letter-spacing: 0.5px;
+    }
+
+    /* EVENT PAGE RESPONSIVE */
+
+    .prev_cont_wrapper {
+        width: 90%;
+        position: relative;
+    }
+
+    .prev_cont {
+        text-align: left;
+    }
+
+    .prev_cont_title h1 {
+        font-size: 7vw;
+    }
+
+    .prev_cont_btn a button {
+        font-size: 3.5vw;
+        padding: 4% 15% 4% 15%;
+    }
+
+    /* EVENTS ROW RESPONSIVE */
+
+    .events_row_content {
+        width: 90%;
+        position: relative;
+    }
+
+    .events_row_title h2 {
+        font-size: 8vw;
+    }
+
+    .events_row_bg img {
+        height: 170px;
+    }
+
+    .event_form_title {
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 16px;
+        text-align: left;
+    }
+
+    .event_form_title h2 {
+        line-height: 40px;
+    }
+
+    .event_form_desc {
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 16px;
+        text-align: left;
+    }
+
+    .event_form_note {
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 134px;
+        text-align: left;
+    }
+
+    .event_form {
+        width: 90%;
+    }
+
+    .form_input_row {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    .input_preference {
+        width: 100%;
+        margin-bottom: 24px;
+    }
+
+    .form_btn button {
+        font-size: 3.5vw;
+        padding: 4% 15% 4% 15%;
+    }
+
+    /* MENU  PAGE RESPONSIVE*/
+
+    .menu_preview_bg img {
+        height: 130px;
+    }
+
+    .menu_preview_title h1 {
+        font-size: 5vw;
+    }
+
+    .menu_preview_desc {
+        display: none;
+    }
+
+    .menu_content {
+        flex-direction: column;
+    }
+
+    .menu_content_left {
+        width: 100%;
+    }
+
+    .menu_content_right {
+        width: 100%;
+    }
+
+    .menu_navigation ul {
+        text-align: center;
+    }
+
+    .menu_navigation ul li {
+        font-size: 3vw;
+    }
+
+    .menu_item_cont ul li span {
+        font-size: 3vw;
+    }
+
+    /* GALLERY PAGE RESPONSIVE */
+
+    .gallery_preview {
+        padding: 100px 0px 100px 0px;
+    }
+
+    .gallery_title h1 {
+        font-size: 6vw;
+    }
+
+    .join_us {
+        width: 100%;
+    }
+
+    .join_us_desc {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header_left_side a img {
+        width: 15%;
+    }
+    
+    .preview_logo img {
+        width: 30%;
+    }
+
+    .preview_title h1 {
+        font-size: 6vw;
+    }
+
+    .preview_title h1 br {
+        display: none;
+    }
+}

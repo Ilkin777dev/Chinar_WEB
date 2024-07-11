@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/respons.css">
+    <!-- FAV ICON -->
+    <link rel="icon" type="image/x-icon" href="img/static/fav-icon.png">
+    <!-- OWL CAROUSEL -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>CHiNAR Restaurant</title>
+</head>
+<body class="page_hide">
+    <style>
+        .hide {
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s ease 0s;
+        }
+        
+        .show {
+            visibility: visible;
+            opacity: 1;
+            transition: all 0.3s ease 0s;
+        }
+
+        .page_hide {
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s ease 0s;
+        }
+
+        .page_show {
+            visibility: visible;
+            opacity: 1;
+            transition: all 2s ease 0s;
+        }
+    </style>
+    
+    <!-- HEADER -->
+    <header>
+        <div class="header_wrapper">
+            <div class="header_left_side">
+                <a href="index.html"><img class="hide" src="img/static/Logo.webp" alt="Chinar Restaurant Logo"></a>
+            </div>
+            <div class="header_middle_side">
+                <ul>
+                    <li><a href="about_us.html">ABOUT US</a></li>
+                    <li><a href="menu.html">MENU</a></li>
+                    <li><a href="events.html">EVENTS</a></li>
+                    <li><a href="gallery.html">GALLERY</a></li>
+                    <li><a href="contacts.html">CONTACTS</a></li>
+                </ul>
+            </div>
+            <div class="header_right_side">
+                <div class="menu-btn-6" onclick="menuBtnFunction(this)">
+                    <span></span>                
+                </div>
+                <div class="lang_menu">
+                    <div class="lang_btn">
+                        <p>EN</p>
+                        <img src="img/static/down_arrow.svg" alt="Chinar Language Arrow">
+                    </div>
+                </div>
+            </div>
+            <div class="lang_menu_sel">
+                <a href="#">AZ</a>
+                <!-- <a href="#">RU</a> -->
+            </div>
+        </div>
+    </header>
+    <div class="header_menu">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about_us.html">ABOUT US</a></li>
+            <li><a href="menu.html">MENU</a></li>
+            <li><a href="gallery.html">GALLERY</a></li>
+            <li><a href="events.html">EVENTS</a></li>
+            <li><a href="contacts.html">CONTACTS</a></li>
+            <li><a href="#">AZ</a></li>
+            <!-- <li><a href="#">RU</a></li> -->
+        </ul>
+    </div>
+    <!-- HEADER END -->
+    
+    <!-- PREVIEW SECTION -->
+    <div class="preview_section_wrapper">
+        <div class="green_element_wrapper">
+            <img src="img/main_page/green_element.png" alt="">
+        </div>
+        <div class="preview_section">
+            <div class="preview_cont_wrapper">
+                <div class="preview_cont">
+                    <div class="preview_logo">
+                        <img src="img/static/Logo.webp" alt="">
+                    </div>
+                    <div class="preview_title">
+                        <h1>
+                            EXPERIENCE THE ORIENT
+                            <br>
+                            NEAR AND FAR
+                        </h1>
+                    </div>
+                    <!-- <div class="preview_desc">
+                        <p>
+                            Chinar is a Pan-Asian cuisine restaurant in Baku. It's time to rediscover Chinar, a place where contemporary Asian flavors meet culinary excellence. 
+                        </p>
+                    </div> -->
+                    <div class="preview_butn">
+                        <a href="contacts.html"><button>RESERVATION</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="preview_arrow">
+                <a href="#ab_main">
+                    <!-- this should be done with PUG -->
+                    <div class="badge c-black" id="badge">
+                        <span class="badge__char">D</span>		
+                        <span class="badge__char">O</span>		
+                        <span class="badge__char">W</span>		
+                        <span class="badge__char">N</span>	
+                        <span class="badge__char">-</span>
+                        <span class="badge__char">S</span>
+                        <span class="badge__char">C</span>
+                        <span class="badge__char">R</span>
+                        <span class="badge__char">O</span>
+                        <span class="badge__char">L</span>	
+                        <span class="badge__char">L</span>	
+                        <span class="badge__char">-</span>
+
+                        <img class="badge__emoji" src="img/static/croll_down.svg" alt="">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ab_main_section -->
+
+    <div class="ab_main_wrapper">
+        <div class="ab_main" id="ab_main">
+            <div class="ab_main_left">
+                <div class="ab_main_cont">
+                    <div class="ab_main_title">
+                        <h2>
+                            Modern Pan-Asian cuisine
+                        </h2>
+                    </div>
+                    <div class="ab_main_desc">
+                        <p>
+                            Pan-Asian is a cuisine that intertwines the culinary traditions of different Asian countries: Japan, Thailand, Singapore, Malaysia, China and others. CH<span class="lower_case">i</span>NAR  is a unique place in Baku, where you can experience the taste of fusion cusine.
+                        </p>
+                    </div>
+                    <div class="ab_main_link">
+                        <a href="about_us.html">Read more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ab_main_right">
+                <img src="img/main_page/pan-asian.png" alt="">
+            </div>
+        </div>
+    </div>
+    
+    <!-- SECOND AB -->
+
+    <div class="ab_main_wrapper">
+        <div class="ab_main ab_right_text_wrapper">
+            <div class="ab_main_left">
+                <img src="img/main_page/symph_of_flavours.png" alt="">
+            </div>
+            <div class="ab_main_right ab_right_text">
+                <div class="ab_main_cont">
+                    <div class="ab_main_title">
+                        <h2>
+                            Symphony of flavors
+                        </h2>
+                    </div>
+                    <div class="ab_main_desc">
+                        <p>
+                            To ensure top-quality dishes, CH<span class="lower_case">i</span>NAR selects ingredients from trusted suppliers and combines them with modern, innovative culinary techniques. 
+                        </p>
+                    </div>
+                    <div class="ab_main_link">
+                        <a href="menu.html">View the menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- THIRD AB -->
+
+    <div class="ab_main_wrapper">
+        <div class="ab_main">
+            <div class="ab_main_left">
+                <div class="ab_main_cont">
+                    <div class="ab_main_title">
+                        <h2>
+                            Distinctive and refined cocktails
+                        </h2>
+                    </div>
+                    <div class="ab_main_desc">
+                        <p>
+                            Experience the artistry of our mixologists with our collection of distinctive and refined cocktails. Each drink is crafted to delight the senses, blending unique flavors and premium ingredients to create an unparalleled drinking experience. From our signature creations to exclusive offerings, every sip embodies innovation and sophistication, making each visit to CH<span class="lower_case">i</span>NAR a journey of taste and refinement.
+                        </p>
+                    </div>
+                    <div class="ab_main_link">
+                        <a href="menu.html">View the list</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ab_main_right">
+                <img src="img/main_page/exclusive_list.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!-- CHIEF SECTION -->
+
+    <div class="chief_section_wrapper">
+        <div class="chief_section">
+            <div class="chief_section_left">
+                <img src="img/main_page/chief_section.png" alt="Gokhan Ozkol">
+            </div>
+            <div class="chief_section_right">
+                <div class="chief_content_wrapper">
+                    <div class="chief_desc">
+                        <div class="chief_quote">
+                            <img src="img/static/quotes.webp" alt="">
+                        </div>
+                        <div class="chief_text">
+                            <p>
+                                In the world of haute cuisine, the key to 
+                                exceptional food is not just skill, but also a 
+                                blend of in-depth research and unwavering 
+                                patience. My philosophy has always been 
+                                to explore extensively and settle only 
+                                for the absolute best.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="chief_name">
+                        <div class="chief_name_cont">
+                            <div class="chief_name_title">
+                                <p>EXECUTIVE CHEF</p>
+                            </div>
+                            <div class="chief_name_text">
+                                <p>Gokhan Ozkol</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN PAGE SLIDER SECTION -->
+    <!-- Set up your HTML -->
+    <div class="main_page_slider">
+        <div class="owl-carousel owl-theme">
+            <div class="first_slide slide_item">
+                <div class="slider_text">
+                    <p>
+                        CH<span class="lower_case">i</span>NAR has been famous Baku landmark and meeting place for decades. Today CH<span class="lower_case">i</span>NAR offers a range of dining and entertainment experiences that are amongst the finest in the world.
+                    </p>
+                </div>
+            </div>
+            <div class="second_slide slide_item">
+                <div class="slider_text">
+                    <p>
+                        CH<span class="lower_case">i</span>NAR is inspired by the mythical azeri hero Bahram Gur who slaved a formidable dragon. Also, near CH<span class="lower_case">i</span>NAR is the monument dedicated to this hero.
+                    </p>
+                </div>
+            </div>
+            <div class="third_slide slide_item">
+                <div class="slider_text">
+                    <p>
+                        Originally tea house under a cluster of CH<span class="lower_case">i</span>NAR trees, CH<span class="lower_case">i</span>NAR has now been reborn as a magnificent building of contemporary architecture.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOURTH AB -->
+
+    <div class="ab_main_wrapper">
+        <div class="ab_main">
+            <div class="ab_main_left">
+                <div class="ab_main_cont">
+                    <div class="ab_main_title">
+                        <h2>
+                            sounds of CH<span class="lower_case">i</span>NAR
+                        </h2>
+                    </div>
+                    <div class="ab_main_desc">
+                        <p>
+                            Our restaurant features curated playlists that capture and enhance the ambiance. Each selection is thoughtfully chosen to complement your dining experience, creating a sophisticated and inviting atmosphere. 
+                        </p>
+                    </div>
+                    <div class="ab_main_link">
+                        <a href="https://soundcloud.com/chinarbaku?ref=clipboard&p=i&c=0&si=9BADAD3B985743F68856CEDE5ED86013&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank">Listen our playlist</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ab_main_right">
+                <img src="img/main_page/soundChinar.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!-- EVENTS SECTION FOURTH AB -->
+
+    <div class="ab_main_wrapper" style="margin-bottom: 200px;">
+        <div class="ab_main ab_right_text_wrapper">
+            <div class="ab_main_left">
+                <img src="img/main_page/private_event_magic.png" alt="">
+            </div>
+            <div class="ab_main_right ab_right_text">
+                <div class="ab_main_cont">
+                    <div class="ab_main_title">
+                        <h2>
+                            Private Event Magic
+                        </h2>
+                    </div>
+                    <div class="ab_main_desc">
+                        <p>
+                            <!-- With five distinct relaxation zones, including areas for private dining, every aspect of your visit, from our inviting ambiance to our meticulous service, is crafted to create moments. -->
+                            Immerse yourself in an unforgettable experience with our exclusive private events. From intimate gatherings to grand celebrations, we specialize in crafting magical moments that surpass expectations. Our dedicated team ensures every detail is perfect, from bespoke cocktails and gourmet cuisine to personalized service and elegant ambiance. Discover the enchantment of your next event with us, where every occasion is transformed into an extraordinary celebration.
+                        </p>
+                    </div>
+                    <div class="ab_main_link ab_host_btn">
+                        <a href="events.html"><button>HOST YOUR EVENT</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- FOOTER SECTION -->
+    <footer>
+        <div class="footer_wrapper">
+            <div class="footer_left_side">
+                <a href="index.html"><img src="img/static/Logo.webp" alt=""></a>
+            </div>
+            <div class="footer_right_side">
+                <div class="footer_block">
+                    <div class="footer_elem_title">
+                        <h3>ADRESS:</h3>
+                        <br>
+                        <a href="https://maps.app.goo.gl/Vsk5XZ7RQjWQPXj96" target="_blank">Shovket Alakbarova Str.1, Baku, Azerbaijan</a>
+                        <br>
+                        <br>
+                        <h3>PHONE:</h3>
+                        <br>
+                        <a href="tel:+994124048211" target="_blank">+994 12 404 82 11</a>
+                        <br>
+                        <br>
+                        <h3>E-MAIL:</h3>
+                        <br>
+                        <a href="mailto:" target="_blank">reservations@chinar-dining.az</a>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="media_links">
+                        <a href="https://www.instagram.com/chinardining/" class="insta_icon"><img src="img/static/insta.webp" alt=""></a>
+                        <a href="https://www.facebook.com/CHINARBAKU/"><img src="img/static/face.webp" alt=""></a>
+                    </div>
+                </div>
+                <div class="footer_block">
+                    <div class="footer_elem_title">
+                        <h3>OPENING HOURS:</h3>
+                        <br>
+                        <p>
+                            Tuesday, Wednesday, Thursday, Sunday from 12 pm to 1 am
+                        </p>
+                        <br>
+                        <br>
+                        <p>
+                            Friday, Saturday, Monday from 12 pm to 2 am
+                        </p>
+                        <br>
+                        <br>
+                        <p>
+                            Terrace opened from 6pm
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="lower_footer">
+        <p>
+            CH<span class="lower_case">i</span>NAR Restaurant 2024 © All rights reserved.
+        </p>
+    </div>
+
+    
+
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <!-- HEADER VISIBILITY ANIMATION -->
+    <script>
+        // Header visibility on scroll
+        $(window).scroll(function () { 
+            if ($(this).scrollTop() > 150) {
+                // $('.header_left_side a img').hide();
+                $('.header_left_side a img').addClass("show");
+                $('.header_left_side a img').removeClass("hide");
+            } else {
+                // $('.header_left_side a img').show();
+                $('.header_left_side a img').addClass("hide");
+                $('.header_left_side a img').removeClass("show");
+            }
+        });
+    </script>
+    <!-- CIRCULAR TEXT ANIMATION -->
+    <script>
+        const element = document.querySelectorAll(".badge__char");
+        const step = 360/element.length;
+
+        element.forEach((elem, i) => {
+        elem.style.setProperty('--char-rotate', (i * step) + 'deg');
+        })
+
+        const foo = (360 / 7);
+
+        for (i = 0; i <= 7; i++) {
+        console.log((i * foo) + 'deg');
+        }
+    </script>
+    <!-- OWL CAROUSEL SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        const prevIcon = '<img src="img/static/prev.webp" alt="">';
+        const nextIcon = '<img src="img/static/next.webp" alt="">';
+
+        $(document).ready(function(){
+        $(".owl-carousel").owlCarousel({
+            items: 1,
+            dots: false,
+            nav: true,
+            navText: [
+                prevIcon,
+                nextIcon
+            ]
+        });
+        });
+    </script>
+</body>
+</html>

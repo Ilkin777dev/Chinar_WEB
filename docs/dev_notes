@@ -1,0 +1,48 @@
+<!-- 
+<div class="ab_main_wrapper about_us_sep_page">
+    <div class="ab_main">
+        <div class="ab_main_left">
+            <div class="ab_main_cont">
+                <div class="ab_main_title">
+                    <h2>
+                        ABOUT CHINAR
+                    </h2>
+                </div>
+                <div class="ab_main_desc">
+                    <p>
+                        Visit our restaurant to explore a special mix of traditional and new flavors from across Asia. Enjoy our dishes in Baku, served with great style and welcoming hospitality.
+                    </p>
+                </div>
+                <div class="ab_main_link">
+                    <a href="#">Reservations</a>
+                    <a href="#">Menu</a>
+                    <a href="#">Group events & Private dining</a>
+                </div>
+            </div>
+        </div>
+        <div class="ab_main_right">
+            <img src="img/about_us_page/about_us_first_row.png" alt="">
+        </div>
+    </div>
+</div
+-->
+
+/* .about_us_sep_page {
+    position: relative;
+    top: 160px;
+}
+
+.about_us_sep_page .ab_main .ab_main_title h2 {
+    color: #B09044;
+}
+
+.about_us_sep_page .ab_main .ab_main_cont .ab_main_link {
+    display: flex;
+    flex-direction: column;
+    border: 1px dotted red;
+}
+
+.about_us_sep_page .ab_main .ab_main_cont .ab_main_link a:not(:last-child) {
+    margin-bottom: 8px;
+    border: 1px solid lime;
+} */

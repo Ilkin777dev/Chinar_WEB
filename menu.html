@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/respons.css">
+    <!-- FAV ICON -->
+    <link rel="icon" type="image/x-icon" href="img/static/fav-icon.png">
+    <title>MENU CHiNAR Restaurant</title>
+</head>
+<body class="page_hide">
+    <style>
+        .page_hide {
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s ease 0s;
+        }
+
+        .page_show {
+            visibility: visible;
+            opacity: 1;
+            transition: all 2s ease 0s;
+        }
+    </style>
+    
+    <!-- HEADER -->
+    <header style="position: relative;">
+        <div class="header_wrapper">
+            <div class="header_left_side">
+                <a href="index.html"><img class="hide" src="img/static/Logo.webp" alt="Chinar Restaurant Logo"></a>
+            </div>
+            <div class="header_middle_side">
+                <ul>
+                    <li><a href="about_us.html">ABOUT US</a></li>
+                    <li><a href="menu.html">MENU</a></li>
+                    <li><a href="events.html">EVENTS</a></li>
+                    <li><a href="gallery.html">GALLERY</a></li>
+                    <li><a href="contacts.html">CONTACTS</a></li>
+                </ul>
+            </div>
+            <div class="header_right_side">
+                <div class="menu-btn-6" onclick="menuBtnFunction(this)">
+                    <span></span>
+                </div>
+                <div class="lang_menu">
+                    <div class="lang_btn">
+                        <p>EN</p>
+                        <img src="img/static/down_arrow.svg" alt="Chinar Language Arrow">
+                    </div>
+                </div>
+            </div>
+            <div class="lang_menu_sel">
+                <a href="#">AZ</a>
+                <!-- <a href="#">RU</a> -->
+            </div>
+        </div>
+    </header>
+    <div class="header_menu">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about_us.html">ABOUT US</a></li>
+            <li><a href="menu.html">MENU</a></li>
+            <li><a href="gallery.html">GALLERY</a></li>
+            <li><a href="events.html">EVENTS</a></li>
+            <li><a href="contacts.html">CONTACTS</a></li>
+            <li><a href="#">AZ</a></li>
+            <!-- <li><a href="#">RU</a></li> -->
+        </ul>
+    </div>
+    <!-- HEADER END -->
+
+    <!-- MENU PREVIEW -->
+    <div class="menu_preview_wrapper">
+        <div class="menu_preview">
+            <div class="menu_preview_bg">
+                <img src="img/menu_page/menu_bg.jpg" alt="">
+            </div>
+            <div class="menu_preview_content">
+                <div class="menu_preview_title">
+                    <h1>MENU</h1>
+                </div>
+                <div class="menu_preview_desc">
+                    <p>
+                        At CH<span class="lower_case">i</span>NAR, there are no rules. Embrace your creativity and craft a unique dining experience! Our attentive staff are always ready to assist with any request, ensuring your visit is exceptional.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu_section_wrapper">
+        <div class="menu_section">
+            <div class="menu_navigation">
+                <ul>
+                    <li id="main_menu_link" class="active_link">MAIN MENU</li>
+                    <li id="exclusive_link">EXCLUSIVE</li>
+                    <li id="dessert_link">DESSERT</li>
+                    <li id="bar_menu_link">BAR MENU</li>
+                </ul>
+            </div>
+            <div class="menu_content_wrapper">
+
+                <div class="menu_content main_menu">
+                    <div class="menu_content_left">
+
+                        <!-- MENU ITEM SEPARATION LEFT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>APPETIZERS</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Beef carpaccio with yuzu truffle, 80 gr.</span><span>23 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Thai style shrimp, 70 gr.</span><span>21 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Classic shrimp tempura, 60 gr. (4 pcs) </span><span>21 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Prawn popcorn, creamy mango sauce, 90 gr.</span><span>21 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Roasted bone marrow beef tartare, hoisin, 300 gr.</span><span>31 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Salmon yuzu miso carpaccio, 60 gr.</span><span>21 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Salmon tartare nori cones, 50 gr.</span><span>14 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Shrimp tartlet 50 gr.</span><span>15 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Padron peppers 100 gr.</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Tokyo chicken gyoza dumpling, 90 gr. (5 pcs)</span><span>15 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Ebi Gyoza steamed or crispy prawn dumplings, 80 gr. (6 pcs)</span><span>18 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Smoked salmon spring roll, 60 gr.</span><span>21 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Roast duck spring rolls with sweet chili sauce, 120 gr.</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Lemongrass infused butter sweetcorn, 200 gr.</span><span>24 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Beef skewers, 80 gr.</span><span>16 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Chicken yakitori, 80 gr.</span><span>14 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Spicy chicken wings, 200 gr.</span><span>14 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- MENU ITEM SEPARATION LEFT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>SALADS</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Grilled Asian chicken salad, 150 gr.</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Crispy duck cucumber salad, 250 gr.</span><span>23 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Spicy Thai beef salad— tomatoes & cucumber, 150 gr.</span><span>23 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Gochujang glazed aged salmon, 100 gr.</span><span>28 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Salmon tataki lotus root chips, 120 gr.</span><span>25 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Tuna tataki spicy sesame vinaigrette, 100 gr.</span><span>25 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Spinach & truffle oil salad with prawn, 150 gr.</span><span>35 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Lobster carpaccio with yuzu truffle & granite, 70 gr.</span><span>58 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- MENU ITEM SEPARATION LEFT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>SOUPS</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Tom yam with chicken, 350 gr.</span><span>18 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Tom yam with prawn, 350 gr.</span><span>19 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Tom kha with chicken, 350 gr.</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Hot and sour crab, 400 gr.</span><span>18 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Hot and sour chicken, 400 gr.</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Sweetcorn soup and crab, 250 gr. (new)</span><span>16 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- MENU ITEM SEPARATION LEFT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>JAPANESE RAMEN</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Creamy miso ramen (new)</span><span>28 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Creamy spicy miso ramen (new)</span><span>29 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- MENU ITEM SEPARATION LEFT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>POULTRY</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Signature Peking duck with pancake, 185 gr.</span><span>50 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Signature aromatic duck with pancake, 185 gr.</span><span>54 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Wok fried chicken with black pepper sauce, 450 gr.</span><span>27 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>CH<span class="lower_case">i</span>NAR sweet and sour chicken with pomegranate, 250 gr.</span><span>25 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- MENU ITEM SEPARATION LEFT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>VEGETERIAN</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Edamame (salty or spicy) / chili garlic sauce , 150gr.</span><span>10/12 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Miso soup—seaweed, tofu, 80 gr.</span><span>10 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Field green salads, lemon ginger dressing, 150 gr.</span><span>12 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Fried tofu salad, 150 gr.</span><span>32 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Spicy green papaya oriental salad, 150 gr.</span><span>21 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Roasted eggplant salad, 125 gr. (new)</span><span>16 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Iceberg lettuce salad, 100 gr. (new)</span><span>18 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Oshi sushi with fried mushroom & unagi sauce,120 gr.</span><span>18 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Vegetable tacos - avocado, edamame and miso, 30 gr. (2 pcs)</span><span>9 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Avocado vegetable roll, 120 gr. (6 pcs)</span><span>14 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Vegetable curry, 400 gr.</span><span>28 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Vegetable fried rice/noodles, 400 gr.</span><span>19/21 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- MENU ITEM SEPARATION LEFT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>CH<span class="lower_case">i</span>NAR CURRIES</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Prawn Malaysian curry, 400 gr.</span><span>35 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Green chicken curry, 400 gr.</span><span>35 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Aromatic duck curry, 400 gr.</span><span>46 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu_content_right">
+                        <!-- MENU ITEM SEPARATION RIGHT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>SEAFOOD</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Wok fried prawn, shitake mushrooms, spicy sweet basil, 450 gr.</span><span>32 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Wood oven salmon wasabi sauce, 120 gr.</span><span>52 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Atlantic black cod in spicy miso, 150 gr.</span><span>72 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Grilled Chilean seabass, jalapeno ginger sauce,150gr.</span><span>78 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- MENU ITEM SEPARATION RIGHT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>MEAT</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Wok fried beef tenderloin with vegetables, 450 gr.</span><span>30 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Supreme tenderloin beef fillet steak, 150 gr.</span><span>48 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Asian BBQ Black Angus rib eye steak, 200 gr.</span><span>62 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Beef ribs with soya pepper sauce, 200 gr.</span><span>59 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Supreme Australian wagyu rib eye steak, 150 gr.</span><span>110 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Chili marinated lamb chops with tofu sauce, 250 gr.</span><span>39 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Beef burger with Asian coleslaw & spicy mango mayo, 300 gr.</span><span>25 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- MENU ITEM SEPARATION RIGHT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>RICE & NOODLES</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Chicken coriander fried rice, 400 gr.</span><span>22 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Seafood fried rice, 400 gr.</span><span>27 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Nasi goreng, spicy fried rice, shrimps & chicken, 450 gr.</span><span>26 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Pad Thai noodles with chicken & shrimp, 300 gr.</span><span>25 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Singapore noodles - prawn, chicken & squid, 300 gr.</span><span>25 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Shredded duck fried noodles, 300 gr.</span><span>27 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Fried noodles with chicken, 300 gr.</span><span>22 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Fried noodles with prawn, 300 gr.</span><span>29 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Fried noodles with beef, 300 gr.</span><span>28 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Shrimp char kway teow, 300 gr.</span><span>29 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- MENU ITEM SEPARATION RIGHT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>SUSHI ROLL</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>California crab roll, 140 gr. (6 pcs)</span><span>21 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Philadelphia cream cheese salmon roll, 140 gr. (8 pcs).</span><span>24 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Philadelphia roll with smoked salmon, 140 gr. (8 pcs)</span><span>25 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Salmon avocado roll, 195 gr. (6 pcs)</span><span>21 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Spider roll - soft shell crab tempura,cucumber, 195 gr. (6 pcs)</span><span>26 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Crispy prawn roll, 195 gr. (6 pcs)</span><span>21 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>CH<span class="lower_case">i</span>NAR roll - salmon, tuna, seabass, cucmber, 150 gr. (6 pcs)</span><span>28 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>House roll - Seared salmon, crab, white truffle oil, 200 gr. (8 pcs)</span><span>29 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Dragon roll - eel, avocado & cucumber, 150 gr. (8 pcs)</span><span>38 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Rainbow roll-tuna, salmon, yellowtail & shrimp, 200 gr. (8 pcs)</span><span>33 AZN</span>
+                                    </li>
+
+                                    <li>
+                                        <span>Sesame soy yellowtail roll, 150 gr. (6 pcs) (new)</span><span>34 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Tuna maki with spicy miso and mayo, 140 gr. (8 pcs)</span><span>23 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Spicy salmon crunchy roll, 160 gr. (6 pcs)</span><span>26 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Spicy tuna crunchy roll, 160 gr. (6 pcs)</span><span>24 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Crab tempura roll - cream cheese & salmon, 150 gr. (8 pcs)</span><span>24 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Salmon avocado crispy tempura roll, 160 gr. (6 pcs)</span><span>24 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Teriyaki spicy salmon tempura roll, 160 gr. (5 pcs)</span><span>24 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- MENU ITEM SEPARATION RIGHT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>OSHI SUSHI</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Salmon oshi with honey ponzu mayo, 120 gr.</span><span>23 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Crispy rice,beef tartare & foie gras paste,teriyaki,150 gr.</span><span>21 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Wagyu rib eye oshi, 120 gr.</span><span>27 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- MENU ITEM SEPARATION RIGHT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>Nigiri-55 gr. or Sashimi-50 gr.</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Japenese blue fin tuna Akami</span><span>75 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Japenese blue fin tuna Chutoro</span><span>95 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Japenese blue fin tuna Otoro</span><span>105 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Salmon</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Salmon belly aburi</span><span>19 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Smoked Salmon</span><span>18 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Yellow tail</span><span>26 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Tuna</span><span>21 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Unagi</span><span>32 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Seabass</span><span>16 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Sweet shrimp</span><span>27 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Shrimp</span><span>16 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- MENU ITEM SEPARATION RIGHT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>CH<span class="lower_case">i</span>NAR TACOS</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Marinated tuna & avocado, 30 gr. (2 pcs)</span><span>14 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Spicy salmon - creamy chili sauce & avocado, 30 gr. (2 pcs)</span><span>12 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="menu_content exclusive_menu">
+                    <div class="menu_content_left">
+                        <!-- MENU ITEM SEPARATION LEFT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>EXCLUSIVE MENU</h2>
+                                <br>
+                                <span class="by_text">By Gokhan Ozkol & His Team</span>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Charred Edamame, 150 gr.</span><span>14 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Creamy Baked Tuna & Chips, 100 gr.</span><span>22 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Fresh Yuzu Sea Bass Ceviche, 80 gr.</span><span>31 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Japanese Beef Tartare with Spicy Yuzu Sauce, 80 gr.</span><span>29 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Salmon Tartare and Rice Cracker, 70 gr.</span><span>23 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Chicken Karaage, 150 gr.</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Fried Squid, 125 gr.</span><span>18 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Tuna Oshi with Wasabi Mayo, 120 gr.</span><span>22 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Crispy Kataifi Tuna Roll Spicy Mayo & Unagi Sauce, 200 gr.</span><span>27 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Japanese Blue Fin Tuna Toro Tataki, 100 gr.</span><span>155 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Japanese Wagyu Striploin A5 Tataki, Yuzu Truffle, 100 gr.</span><span>250 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Hokkaido Scallops With Plum Sauce, 70 gr.</span><span>59 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu_content_right">
+                        <!-- MENU ITEM SEPARATION RIGHT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Escargots with Chili Ponzu Butter, 120 gr.</span><span>59 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Teriyaki Glazed Foie Gras with Smoked Foie Gras Ice Cream, 110 gr.</span><span>57 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Smoked Miso Baby Chicken, 250 gr.</span><span>34 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Japanese Wagyu Striploin A5 with Ponzu & BBQ Sauce, 200 gr.</span><span>500 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Hamachi Kama, 125 gr.</span><span>62 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Thai Style Grilled Sea Bass, 150 gr.</span><span>46 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Ribeye with Wafu Sauce, 200 gr.</span><span>52 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Japanese Style Truffle Mushroom Hot Pot, 300 gr.</span><span>28 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>40 Days Dry Aged Tomahawk with Shiso Pesto & Yuzu Truffle, 1 kg.</span><span>265 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Grilled Tiger Prawn with Yuzu Kosho, 120 gr.</span><span>49 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Pecan Heaven, 200 gr.</span><span>24 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu_content dessert_menu">
+                    <div class="menu_content_left">
+                        <!-- MENU ITEM SEPARATION LEFT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>DESSERT MENU</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>CH<span class="lower_case">i</span>NAR Eight Treasure, 480 gr.</span><span>38 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Trio Crème Brulee, 150 gr.—Chocolate, vanilla and lychee</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Chocolate Fondant, 200 gr.</span><span>16 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Oreo Cheese Cake, 100 gr.—Raspberry sauce & fruits</span><span>15 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Belgian Chocolate Tart, 120 gr.</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Warm Date Pudding, 90 gr.</span><span>14 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Dolcelatte Banana Harumaki, 150 gr.</span><span>14 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Oriental sticks, 170 gr.</span><span>12 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Roasted Rice Ice Cream, 100 gr.</span><span>16 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Lychee of Pavlova, 200 gr.</span><span>16 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Sweet Cinnamon Burgers with Ice Cream, 100 gr.</span><span>14 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>For the tea set 3 pieces Chef selection of cookies, 60 gr.</span><span>5 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu_content_right">
+                        <!-- MENU ITEM SEPARATION RIGHT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>CH<span class="lower_case">i</span>NAR’s Fortune, 200 gr. (new)</span><span>16 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Miso Cream Tree Tiramisu, 150 gr. (new)</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Duck Shower, 200 gr. (new)</span><span>21 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Popcorn Ice Cream Dessert, 100 gr. (new)</span><span>14 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Olive Oil Panna Cotta, 100 gr. (new)</span><span>19 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>CH<span class="lower_case">i</span>NAR Mochi Ice Cream, 110 gr.</span><span>14 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Deep fried ice cream, 1 ball, 130 gr.</span><span>11 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Selection of Ice Cream, 150 gr.</span><span>14 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Selection of Sorbet, 150 gr.</span><span>12 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Seasonal Fruit Plate, 300 gr.</span><span>32 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Macaroon plate, 60 gr. (3 pieces)</span><span>12 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu_content bar_menu">
+                    <div class="menu_content_left">
+                        <!-- MENU ITEM SEPARATION LEFT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>CH<span class="lower_case">i</span>NAR SIGNATURE</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Zakuro, 150 ml</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Goma, 120 ml</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Scarlett, 110 ml</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Dragon Kiss, 160 ml</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Asian Cooler, 180 ml</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Mr.Beer, 150 ml</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Lychee Rhubarb Martini, 150 ml</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Pandan and Banana Martini, 120ml</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Plum Sour, 110 ml</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Rhubarb and Passion fruit martini, 150 ml</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Jasmine, 120ml</span><span>17 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- MENU ITEM SEPARATION LEFT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>LONG AND STRONG</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Long Break Up, 160 ml</span><span>19 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Asian Trader, 150 ml</span><span>19 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Carribean Spice, 190 ml</span><span>19 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Smoke Injection, 130ml</span><span>19 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- MENU ITEM SEPARATION LEFT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>CH<span class="lower_case">i</span>NAR HERITAGE</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>The Fruit Of Love, 150 ml</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Caravan, 150 ml</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>CH<span class="lower_case">i</span>NAR Breeze, 190 ml</span><span>17 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- MENU ITEM SEPARATION LEFT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>VIRGIN AND BUBBLY</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Cinnamon Cooler, 185 ml</span><span>12 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Pink Lychee Coconut, 185 ml</span><span>12 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>The Fruit Of Love N/A, 185 ml</span><span>12 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>CH<span class="lower_case">i</span>NAR Goddess, 220 ml</span><span>12 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Oriental Express, 220 ml</span><span>12 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Baptista, 220 ml</span><span>12 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- MENU ITEM SEPARATION LEFT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>SAKE</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Sake, Junmai Ginjo, Ougyoku, 200 ml</span><span>45 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Sake, Junmai Ginjo, Ougyoku, 400 ml</span><span>90 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Sake, Junmai Ginjo, Ougyoku, 720 ml (Btl.)</span><span>170 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Sake, Daiginjo, Honjirushi Sakura, 200 ml</span><span>60 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Sake, Daiginjo, Honjirushi Sakura, 400 ml</span><span>120 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Sake, Daiginjo, Honjirushi Sakura, 720 ml (Btl.)</span><span>200 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- MENU ITEM SEPARATION LEFT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>GIN, 40 ML</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Bombay Sapphire, UK</span><span>10 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Beefeater, UK</span><span>10 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Tanqueray, UK</span><span>12 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Tanqueray 10, UK</span><span>14 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Hendrick’s, UK</span><span>14 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Bottega Bacur, Italy</span><span>14 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Monkey 47, Germany</span><span>27 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Gin Mare, Spain</span><span>17 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- MENU ITEM SEPARATION LEFT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>TEQUILA, 40 ML</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Olmeca Blanco</span><span>11 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Patron Silver</span><span>21 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Patron Anejo</span><span>21 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>1942 Don Julio Tequila, Mexico (limited)</span><span>55 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Le Tribute, Mezcal, Mexico (limited)</span><span>23 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Don Julio Blanco</span><span>26 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Rooster Rojo Blanco</span><span>18 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- MENU ITEM SEPARATION LEFT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>SCOTCH AND IRISH WHISKY, 40 ML</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Chivas Regal 12</span><span>13 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Chivas Regal 18</span><span>21 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Chivas Regal 21</span><span>45 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Chivas Regal 25</span><span>67 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Chivas Regal 38</span><span>120 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Johnie Walker Black Label</span><span>11 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Johnie Walker Gold Label</span><span>20 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Johnie Walker Blue Label</span><span>50 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Jameson</span><span>10 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Glenmorangie 10</span><span>16 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Glenmorangie Quinta Ruban</span><span>21 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Glenfiddich 12</span><span>16 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Glenfiddich 18</span><span>25 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Ardbeg 10</span><span>24 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Lagavulin 16</span><span>21 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Talisker 10</span><span>18 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Macallan 12</span><span>34 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Macallan 15</span><span>45 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Monkey Shoulder</span><span>14 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Balvenie 12</span><span>19 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="menu_content_right">
+                        <!-- MENU ITEM SEPARATION RIGHT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>SHOKUZEN</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Sakura highball, 160 ml</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Honeybush Bellini, 170 ml</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Almatini, 120 ml</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Strawberry Spritzer, 170 ml</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Japanese Negroni, 90 ml</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>GT, 150 ml</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Shipuchka, 170 ml</span><span>17 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- MENU ITEM SEPARATION RIGHT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>TWISTED CLASSICS</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Old But Gold, 90 ml</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>CH<span class="lower_case">i</span>NAR Margarita, 110 ml</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Coconut Baiser Espresso Martini, 110 ml</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Tom Yum Bloody Mary, 150 ml</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Cranberry Caipirinha, 110 ml</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Mexican Mule, 120 ml</span><span>17 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Cucumber Pisco Sour, 120 ml</span><span>17 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- MENU ITEM SEPARATION RIGHT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>ICED TEAS, 250 ML</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Jasmine And Almond</span><span>10 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Raspberry And Passion fruit</span><span>10 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Peach And Camomile</span><span>10 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Mango And Ginger</span><span>10 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- MENU ITEM SEPARATION RIGHT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>LEMONADES, 200 ML</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Watermelon</span><span>8 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Peach</span><span>8 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Passion fruit</span><span>8 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Strawberry</span><span>8 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- MENU ITEM SEPARATION RIGHT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>VERMOUTH, 40 ML</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Bianco, Extra Dry, Rosso</span><span>8 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- MENU ITEM SEPARATION RIGHT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>VODKA, 40 ML</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Finlandia, Finland</span><span>9 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Organika, Russia</span><span>11 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Belvedere, Poland</span><span>11 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Beluga, Russia</span><span>11 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Grey Goose, France</span><span>11 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Haku, Rice Vodka, Japan (limited)</span><span>17 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- MENU ITEM SEPARATION RIGHT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>RUM, 40 ML</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Angostura Reserva, Trinidad and Tobago</span><span>9 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Angostura 1919, Trinidad and Tobago</span><span>14 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Havana 7, Cuba</span><span>15 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Sailor Jerry Spiced, Caribbean</span><span>9 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Gosling’s Family Reserve, Old rum</span><span>15 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Zacapa XO</span><span>40 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- MENU ITEM SEPARATION RIGHT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>LIQUEURS, 40 ML</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Amaretto</span><span>9 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Baileys</span><span>9 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Kahlua</span><span>9 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Limoncello</span><span>10 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Porto</span><span>10 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Jagermeister</span><span>10 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Grappa di Moscato Di</span><span>11 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>El Gobernador Pisco</span><span>11 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- MENU ITEM SEPARATION RIGHT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>BEER</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Khirdalan draft, 400 ml</span><span>6 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Paulaner draft, 400 ml</span><span>11 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Heineken bottle, 330 ml</span><span>10 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Corona bottle, 330 ml</span><span>10 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Asahi bottle, 330 ml</span><span>12 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- MENU ITEM SEPARATION RIGHT -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>AMERICAN WHISKEY, 40 ML</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    <li>
+                                        <span>Jack Daniels, Tennessee USA</span><span>10 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Bulleit Bourbon, USA</span><span>14 AZN</span>
+                                    </li>
+                                    <li>
+                                        <span>Woodford Reserve, Kentucky USA</span><span>14 AZN</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <footer>
+        <div class="footer_wrapper">
+            <div class="footer_left_side">
+                <a href="index.html"><img src="img/static/Logo.webp" alt=""></a>
+            </div>
+            <div class="footer_right_side">
+                <div class="footer_block">
+                    <div class="footer_elem_title">
+                        <h3>ADRESS:</h3>
+                        <br>
+                        <a href="https://maps.app.goo.gl/Vsk5XZ7RQjWQPXj96" target="_blank">Shovket Alakbarova Str.1, Baku, Azerbaijan</a>
+                        <br>
+                        <br>
+                        <h3>PHONE:</h3>
+                        <br>
+                        <a href="tel:+994124048211" target="_blank">+994 12 404 82 11</a>
+                        <br>
+                        <br>
+                        <h3>E-MAIL:</h3>
+                        <br>
+                        <a href="mailto:" target="_blank">reservations@chinar-dining.az</a>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="media_links">
+                        <a href="https://www.instagram.com/chinardining/" class="insta_icon"><img src="img/static/insta.webp" alt=""></a>
+                        <a href="https://www.facebook.com/CHINARBAKU/"><img src="img/static/face.webp" alt=""></a>
+                    </div>
+                </div>
+                <div class="footer_block">
+                    <div class="footer_elem_title">
+                        <h3>OPENING HOURS:</h3>
+                        <br>
+                        <p>
+                            Tuesday, Wednesday, Thursday, Sunday from 12 pm to 1 am
+                        </p>
+                        <br>
+                        <br>
+                        <p>
+                            Friday, Saturday, Monday from 12 pm to 2 am
+                        </p>
+                        <br>
+                        <br>
+                        <p>
+                            Terrace opened from 6pm
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="lower_footer">
+        <p>
+            CH<span class="lower_case">i</span>NAR Restaurant 2024 © All rights reserved.
+        </p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <script src="js/menu_script.js"></script>
+</body>
+</html>
