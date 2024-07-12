@@ -1,0 +1,8 @@
+@font-face {
+    font-family: "Cambria";
+    src: url(../fonts/cambria/Cambria\ Lite.ttf);
+}
+
+h1, h2, h3 {
+    font-family: "Cambria" !important;
+}
