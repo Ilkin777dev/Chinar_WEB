@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/respons.css">
+    <!-- FAV ICON -->
+    <link rel="icon" type="image/x-icon" href="img/static/fav-icon.png">
+    <title>Tədbirlər CHiNAR Restaurant</title>
+</head>
+<body class="page_hide">
+    <style>
+        .page_hide {
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s ease 0s;
+        }
+
+        .page_show {
+            visibility: visible;
+            opacity: 1;
+            transition: all 2s ease 0s;
+        }
+    </style>
+    
+    <!-- HEADER -->
+    <header>
+        <div class="header_wrapper">
+            <div class="header_left_side">
+                <a href="index.html"><img class="hide" src="img/static/Logo.webp" alt="Chinar Restaurant Logo"></a>
+            </div>
+            <div class="header_middle_side">
+                <ul>
+                    <li><a href="about_us_az.html">HAQQIMIZDA</a></li>
+                    <li><a href="menu_az.html">MENYU</a></li>
+                    <li><a href="events_az.html">TƏDBİRLƏR</a></li>
+                    <li><a href="gallery_az.html">QALEREYA</a></li>
+                    <li><a href="contacts_az.html">ƏLAQƏ</a></li>
+                </ul>
+            </div>
+            <div class="header_right_side">
+                <div class="menu-btn-6" onclick="menuBtnFunction(this)">
+                    <span></span>                
+                </div>
+                <div class="lang_menu">
+                    <div class="lang_btn">
+                        <p>AZ</p>
+                        <img src="img/static/down_arrow.svg" alt="Chinar Language Arrow">
+                    </div>
+                </div>
+            </div>
+            <div class="lang_menu_sel">
+                <a href="events.html">EN</a>
+                <!-- <a href="#">RU</a> -->
+            </div>
+        </div>
+    </header>
+    <div class="header_menu">
+        <ul>
+            <li><a href="index_az.html">ƏSAS SƏHİFƏ</a></li>
+            <li><a href="about_us_az.html">HAQQIMIZDA</a></li>
+            <li><a href="menu_az.html">MENYU</a></li>
+            <li><a href="events_az.html">TƏDBİRLƏR</a></li>
+            <li><a href="gallery_az.html">QALEREYA</a></li>
+            <li><a href="contacts_az.html">ƏLAQƏ</a></li>
+            <li><a href="events.html">EN</a></li>
+            <!-- <li><a href="#">RU</a></li> -->
+        </ul>
+    </div>
+    <!-- HEADER END -->
+
+    <!-- EVENTS PREVIEW SECTION -->
+    <div class="events_preview_wrapper">
+        <div class="events_preview">
+            <img src="img/events_page/preview_bg.png" alt="">
+            <div class="prev_cont_wrapper">
+                <div class="prev_cont">
+                    <div class="prev_cont_title">
+                        <h1>ŞƏXSİ TƏDBİRLƏR</h1>
+                        
+                    </div>
+                    <div class="prev_cont_desc">
+                        <p>
+                            CH<span class="lower_case">i</span>NAR xüsusi tədbirlər və böyük qruplar üçün diqqətlə seçilmiş yemək təcrübələri və müxtəlif menyu seçimləri təklif edir.
+                        </p>
+                    </div>
+                    <div class="prev_cont_btn">
+                        <a href="#event_form"><button>MÜRACİƏT EDİN</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EVENT ROW SECTION -->
+    <div class="events_row_wrapper">
+
+        <!-- THE TERRACE SECTION -->
+        <div class="events_row">
+            <div class="events_row_bg">
+                <img src="img/events_page/terrace_bg.png" alt="">
+            </div>
+            <div class="events_row_content">
+                <div class="events_row_title">
+                    <h2>
+                        THE TERRACE
+                    </h2>
+                </div>
+                <div class="events_row_desc">
+                    <p>
+                        Our venue offers a bright and fresh atmosphere with an open terrace and a bamboo grove. The terrace can accommodate up to 120 guests, providing a perfect setting for any gathering.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- BAMBOO BAR DINING SECTION -->
+        <div class="events_row">
+            <div class="events_row_bg">
+                <img src="img/about_us_page/bambooBar_slider_bg.png" alt="">
+            </div>
+            <div class="events_row_content">
+                <div class="events_row_title">
+                    <h2>
+                        BAMBOO BAR
+                    </h2>
+                </div>
+                <div class="events_row_desc">
+                    <p>
+                        The Bamboo Bar is an ideal spot for gatherings and special events. With the capacity to host up to 48 guests, it’s a perfect venue for any occasion.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRIVATE DINING SECTION -->
+        <div class="events_row">
+            <div class="events_row_bg">
+                <img src="img/events_page/private_dinning.png" alt="">
+            </div>
+            <div class="events_row_content">
+                <div class="events_row_title">
+                    <h2>
+                        CH<span class="lower_case">i</span>NAR DINING
+                    </h2>
+                </div>
+                <div class="events_row_desc">
+                    <p>
+                        This area blends local styles with Asian influences, perfect for events. It features a spacious open kitchen and elegant bamboo décor. The inviting atmosphere can accommodate over 102 guests.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- DARGON LOUNGE SECTION -->
+        <div class="events_row">
+            <div class="events_row_bg">
+                <img src="img/events_page/dragon_lounge.png" alt="">
+            </div>
+            <div class="events_row_content">
+                <div class="events_row_title">
+                    <h2>
+                        DRAGON LOUNGE
+                    </h2>
+                </div>
+                <div class="events_row_desc">
+                    <p>
+                        Located on the mezzanine and accessed via its own grand staircase. The lounge can accommodate up to 80 guests for a seated dinner.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- VIP LOUNGE SECTION -->
+        <div class="events_row">
+            <div class="events_row_bg">
+                <img src="img/events_page/vip_lounge.png" alt="">
+            </div>
+            <div class="events_row_content">
+                <div class="events_row_title">
+                    <h2>
+                        DINING ROOMS
+                    </h2>
+                </div>
+                <div class="events_row_desc">
+                    <p>
+                        Our two luxurious dining rooms are perfect for hosting private events. Each room can accommodate up to 16 guests.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EVENT FORM SECTION -->
+
+    <div class="event_form_wrapper" id="event_form">
+        <div class="event_form_title">
+            <h2>
+                MAKE YOUR EVENT EXTRAORDINARY WITH CH<span class="lower_case">i</span>NAR
+            </h2>
+        </div>
+        <div class="event_form_desc">
+            <p>
+                For private event enquiries, call our dedicated team on <a href="#" class="gold_color">+994 51 404 82 11</a> or fill out the form below.
+            </p>
+        </div>
+        <div class="event_form_note">
+            <p>
+                Please fill in a valid value for all required fields:*
+            </p>
+        </div>
+        <div class="event_form">
+            <form action="POST" id="events_form">
+                <div class="form_input_row">
+                    <div class="input_preference">
+                        <label for="name">Name*</label>
+                        <input type="text" name="name">
+                    </div>
+                    <div class="input_preference">
+                        <label for="phone">Phone Number*</label>
+                        <input type="text" name="phone">
+                    </div>
+                </div>
+                <div class="form_input_row">
+                    <div class="input_preference">
+                        <label for="email">Email*</label>
+                        <input type="text" name="email">
+                    </div>
+                    <div class="input_preference">
+                        <label for="group">Number Of Guests*</label>
+                        <input type="text" name="group">
+                    </div>
+                </div>
+                <div class="form_single_input">
+                    <label for="details">Event Details*</label>
+                    <!-- <input type="text" name="details"> -->
+                    <textarea name="details" id="events_form"></textarea>
+                </div>
+                <div class="form_btn">
+                    <button type="submit">SUBMIT ENQUIRY</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <footer>
+        <div class="footer_wrapper">
+            <div class="footer_left_side">
+                <a href="index.html"><img src="img/static/Logo.webp" alt=""></a>
+            </div>
+            <div class="footer_right_side">
+                <div class="footer_block">
+                    <div class="footer_elem_title">
+                        <h3>ADRESS:</h3>
+                        <br>
+                        <a href="https://maps.app.goo.gl/Vsk5XZ7RQjWQPXj96" target="_blank">Shovket Alakbarova Str.1, Baku, Azerbaijan</a>
+                        <br>
+                        <br>
+                        <h3>PHONE:</h3>
+                        <br>
+                        <a href="tel:+994124048211" target="_blank">+994 12 404 82 11</a>
+                        <br>
+                        <br>
+                        <h3>E-MAIL:</h3>
+                        <br>
+                        <a href="mailto:" target="_blank">reservations@chinar-dining.az</a>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="media_links">
+                        <a href="https://www.instagram.com/chinardining/" class="insta_icon"><img src="img/static/insta.webp" alt=""></a>
+                        <a href="https://www.facebook.com/CHINARBAKU/"><img src="img/static/face.webp" alt=""></a>
+                    </div>
+                </div>
+                <div class="footer_block">
+                    <div class="footer_elem_title">
+                        <h3>OPENING HOURS:</h3>
+                        <br>
+                        <p>
+                            Tuesday, Wednesday, Thursday, Sunday from 12 pm to 1 am
+                        </p>
+                        <br>
+                        <br>
+                        <p>
+                            Friday, Saturday, Monday from 12 pm to 2 am
+                        </p>
+                        <br>
+                        <br>
+                        <p>
+                            Terrace opened from 6pm
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="lower_footer">
+        <p>
+            CH<span class="lower_case">i</span>NAR Restaurant 2024 © All rights reserved.
+        </p>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
