@@ -6,3 +6,15 @@
 h1, h2, h3 {
     font-family: "Cambria" !important;
 }
+
+.header_middle_side ul li a {
+    font-family: 'Arial', sans-serif !important;
+}
+
+.header_menu ul li a {
+    font-family: 'Arial', sans-serif !important;
+}
+
+.ab_main_link a {
+    font-family: 'Arial', sans-serif !important;
+}
