@@ -1318,7 +1318,7 @@ footer {
   padding-bottom: 20px;
 }
 
-/* GALLERY PREVIEW SECTION */
+/* GALLERY PAGE SECTION */
 
 .gallery_preview {
   padding: 150px 0px 150px 0px;
@@ -1359,6 +1359,13 @@ footer {
   margin-top: 8px;
   vertical-align: middle;
   width: 100%;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+.column img:hover {
+  -webkit-transform: scale(1.03);
+  transform: scale(1.03);
 }
 
 @media (max-width: 1200px) {
