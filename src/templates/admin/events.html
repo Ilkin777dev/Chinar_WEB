@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Events</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+        }
+        h1 {
+            color: #ffffff;
+            text-align: center;
+        }
+        .event {
+            background-size: cover;
+            background-position: center;
+            color: white;
+            height: 500px;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .event h2 {
+            margin: 0;
+        }
+        .event p {
+            flex-grow: 1;
+        }
+        .event a {
+            color: #4CAF50;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        .event a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Manage events</h1>
+        <div>
+            
+        </div>
+        {% for event in events %}
+            <div class="event" style="background-image: url('static/img/events_page/{{ event.image }}');">
+                <h2>{{ event.en_title }}</h2>
+                <p>{{ event.en_content }}</p>
+                <div>
+                    <a href="/admin/event/edit/{{ event.id }}">Edit</a>
+                    <a href="/admin/event/delete/{{ event.id }}">Delete</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

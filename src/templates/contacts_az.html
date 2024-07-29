@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/az_fonts.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/respons.css">
+    <!-- FAV ICON -->
+    <link rel="icon" type="image/x-icon" href="static/img/static/fav-icon.png" />
+    <title>Əlaqə CHiNAR Restaurant</title>
+</head>
+<body class="page_hide">
+    <style>
+        .page_hide {
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s ease 0s;
+        }
+
+        .page_show {
+            visibility: visible;
+            opacity: 1;
+            transition: all 2s ease 0s;
+        }
+    </style>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header_wrapper">
+            <div class="header_left_side">
+                <a href="/index_az"><img class="hide" src="static/img/static/Logo.webp" alt="Chinar Restaurant Logo"></a>
+            </div>
+            <div class="header_middle_side">
+                <ul>
+                    <li><a href="/about_us_az">HAQQIMIZDA</a></li>
+                    <li><a href="/menu_az">MENYU</a></li>
+                    <li><a href="/events_az">TƏDBİRLƏR</a></li>
+                    <li><a href="/gallery_az">QALEREYA</a></li>
+                    <li><a href="/contacts_az">ƏLAQƏ</a></li>
+                </ul>
+            </div>
+            <div class="header_right_side">
+                <div class="menu-btn-6" onclick="menuBtnFunction(this)">
+                    <span></span>
+                </div>
+                <div class="lang_menu">
+                    <div class="lang_btn">
+                        <p>AZ</p>
+                        <img src="static/img/static/down_arrow.svg" alt="Chinar Language Arrow">
+                    </div>
+                </div>
+            </div>
+            <div class="lang_menu_sel">
+                <a href="/contacts">EN</a>
+                <!-- <a href="#">RU</a> -->
+            </div>
+        </div>
+    </header>
+    <div class="header_menu">
+        <ul>
+            <li><a href="/index_az">ƏSAS SƏHİFƏ</a></li>
+            <li><a href="/about_us_az">HAQQIMIZDA</a></li>
+            <li><a href="/menu_az">MENYU</a></li>
+            <li><a href="/events_az">TƏDBİRLƏR</a></li>
+            <li><a href="/gallery_az">QALEREYA</a></li>
+            <li><a href="/contacts_az">ƏLAQƏ</a></li>
+            <li><a href="/contacts">EN</a></li>
+            <!-- <li><a href="#">RU</a></li> -->
+        </ul>
+    </div>
+    <!-- HEADER END -->
+    
+    <!-- MENU PREVIEW -->
+    <div class="menu_preview_wrapper" style="margin-bottom: 100px;">
+        <div class="menu_preview">
+            <div class="menu_preview_bg">
+                <img src="static/img/contacts_page/contacts_bg.png" alt="">
+            </div>
+            <div class="menu_preview_content">
+                <div class="menu_preview_title">
+                    <h1>BİZİMLƏ ƏLAQƏ</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EVENT FORM SECTION -->
+
+    <div class="event_form_wrapper">
+        <div class="event_form_title">
+            <h2>
+                <!-- HAVE A QUESTION? -->
+                SUALINIZ VAR?
+            </h2>
+        </div>
+        <div class="event_form_desc">
+            <p>
+                <!-- Call our dedicated team on <a href="#" class="gold_color">+994 12 404 82 11</a> or fill out the form below. -->
+                Sualınız ilə bağlı <a href="tel:+994124048211" class="gold_color">+994 12 404 82 11</a> nömrəsi ilə komandamıza zəng edin və ya aşağıdakı formanı doldurun
+            </p>
+        </div>
+        <div class="event_form_note">
+            <p>
+                <!-- Please fill in a valid value for all required fields:* -->
+                Zəhmət olmasa, bütün tələb olunan sahələr üçün etibarlı mlumatlar daxil edin:*
+            </p>
+        </div>
+        <div class="event_form">
+            <form action="POST" id="events_form">
+                <div class="form_input_row">
+                    <div class="input_preference">
+                        <label for="name">Ad*</label>
+                        <input type="text" name="name">
+                    </div>
+                    <div class="input_preference">
+                        <label for="phone">Əlaqə Nömrəsi*</label>
+                        <input type="text" name="phone">
+                    </div>
+                </div>
+                <div class="form_input_row">
+                    <div class="input_preference">
+                        <label for="email">E-poçt*</label>
+                        <input type="text" name="email">
+                    </div>
+                    <div class="input_preference">
+                        <label for="subject">İstəkləriniz</label>
+                        <input type="text" name="subject">
+                    </div>
+                </div>
+                <div class="form_single_input">
+                    <label for="message">Mesaj</label>
+                    <!-- <input type="text" name="details"> -->
+                    <textarea name="message" id="events_form"></textarea>
+                </div>
+                <div class="form_btn">
+                    <button type="submit">GÖNDƏRİN</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <footer>
+        <div class="footer_wrapper">
+            <div class="footer_left_side">
+                <a href="/index"><img src="static/img/static/Logo.webp" alt=""></a>
+            </div>
+            <div class="footer_right_side">
+                <div class="footer_block">
+                    <div class="footer_elem_title">
+                        <h3>ÜNVAN:</h3>
+                        <br>
+                        <a href="https://maps.app.goo.gl/Vsk5XZ7RQjWQPXj96" target="_blank">Şövkət Ələkbərova küç.1, Bakı,
+                            Azərbaycan</a>
+                        <br>
+                        <br>
+                        <h3>ƏLAQƏ NÖMRƏSİ:</h3>
+                        <br>
+                        <a href="tel:+994124048211" target="_blank">+994 12 404 82 11</a>
+                        <br>
+                        <br>
+                        <h3>E-POÇT:</h3>
+                        <br>
+                        <a href="mailto:" target="_blank">reservations@chinar-dining.az</a>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="media_links">
+                        <a href="https://www.instagram.com/chinardining/" class="insta_icon"><img
+                                src="static/img/static/insta.webp" alt=""></a>
+                        <a href="https://www.facebook.com/CHINARBAKU/"><img src="static/img/static/face.webp" alt=""></a>
+                    </div>
+                </div>
+                <div class="footer_block">
+                    <div class="footer_elem_title">
+                        <h3>İŞ SAATLARI:</h3>
+                        <br>
+                        <p>
+                            Çərşənbə axşamı, çərşənbə, cümə axşamı, bazar günləri saat 12:00 - 01:00
+                        </p>
+                        <br>
+                        <br>
+                        <p>
+                            Cümə, şənbə, bazar ertəsi saat 12:00 - 02:00
+                        </p>
+                        <br>
+                        <br>
+                        <p>
+                            Teras axşam saat 6-dan açıqdı
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="lower_footer">
+        <p>
+            CH<span class="lower_case">i</span>NAR Restaurant 2024 © All rights reserved.
+        </p>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+    <script src="static/js/script.js"></script>
+</body>
+</html>

@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/az_fonts.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/respons.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/respons.css') }}">
     <!-- FAV ICON -->
-    <link rel="icon" type="image/x-icon" href="img/static/fav-icon.png">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/static/fav-icon.png') }}">
+    
     <!-- OWL CAROUSEL -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -44,15 +44,15 @@
     <header>
         <div class="header_wrapper">
             <div class="header_left_side">
-                <a href="index_az.html"><img class="hide" src="img/static/Logo.webp" alt="Chinar Restaurant Logo"></a>
+                <a href="/index"><img class="hide" src="{{ url_for('static', filename='img/static/Logo.webp') }}" alt="Chinar Restaurant Logo"></a>
             </div>
             <div class="header_middle_side">
                 <ul>
-                    <li><a href="about_us_az.html">HAQQIMIZDA</a></li>
-                    <li><a href="menu_az.html">MENYU</a></li>
-                    <li><a href="events_az.html">TƏDBİRLƏR</a></li>
-                    <li><a href="gallery_az.html">QALEREYA</a></li>
-                    <li><a href="contacts_az.html">ƏLAQƏ</a></li>
+                    <li><a href="/about_us">ABOUT US</a></li>
+                    <li><a href="/menu">MENU</a></li>
+                    <li><a href="/events">EVENTS</a></li>
+                    <li><a href="/gallery">GALLERY</a></li>
+                    <li><a href="/contacts">CONTACTS</a></li>
                 </ul>
             </div>
             <div class="header_right_side">
@@ -61,26 +61,26 @@
                 </div>
                 <div class="lang_menu">
                     <div class="lang_btn">
-                        <p>AZ</p>
-                        <img src="img/static/down_arrow.svg" alt="Chinar Language Arrow">
+                        <p>EN</p>
+                        <img src="{{ url_for('static', filename='img/static/down_arrow.svg') }}" alt="Chinar Language Arrow">
                     </div>
                 </div>
             </div>
             <div class="lang_menu_sel">
-                <a href="index.html">EN</a>
+                <a href="/index_az">AZ</a>
                 <!-- <a href="#">RU</a> -->
             </div>
         </div>
     </header>
     <div class="header_menu">
         <ul>
-            <li><a href="index_az.html">ƏSAS SƏHİFƏ</a></li>
-            <li><a href="about_us_az.html">HAQQIMIZDA</a></li>
-            <li><a href="menu_az.html">MENYU</a></li>
-            <li><a href="events_az.html">TƏDBİRLƏR</a></li>
-            <li><a href="gallery_az.html">QALEREYA</a></li>
-            <li><a href="contacts_az.html">ƏLAQƏ</a></li>
-            <li><a href="index.html">EN</a></li>
+            <li><a href="/index">HOME</a></li>
+            <li><a href="/about_us">ABOUT US</a></li>
+            <li><a href="/menu">MENU</a></li>
+            <li><a href="/gallery">GALLERY</a></li>
+            <li><a href="/events">EVENTS</a></li>
+            <li><a href="/contacts">CONTACTS</a></li>
+            <li><a href="/index_az">AZ</a></li>
             <!-- <li><a href="#">RU</a></li> -->
         </ul>
     </div>
@@ -89,22 +89,28 @@
     <!-- PREVIEW SECTION -->
     <div class="preview_section_wrapper">
         <div class="green_element_wrapper">
-            <img src="img/main_page/green_element.png" alt="">
+            <img src="{{ url_for('static', filename='img/main_page/green_element.png') }}" alt="">
         </div>
         <div class="preview_section">
             <div class="preview_cont_wrapper">
                 <div class="preview_cont">
                     <div class="preview_logo">
-                        <img src="img/static/Logo.webp" alt="">
+                        <img src="{{ url_for('static', filename='img/static/Logo.webp') }}" alt="">
                     </div>
                     <div class="preview_title">
                         <h1>
-                            YAXIN VƏ UZAQ ŞƏRQİN<br>
-                            TƏCRÜBƏSİ
+                            EXPERIENCE THE ORIENT
+                            <br>
+                            NEAR AND FAR
                         </h1>
                     </div>
+                    <!-- <div class="preview_desc">
+                        <p>
+                            Chinar is a Pan-Asian cuisine restaurant in Baku. It's time to rediscover Chinar, a place where contemporary Asian flavors meet culinary excellence. 
+                        </p>
+                    </div> -->
                     <div class="preview_butn">
-                        <a href="contacts.html"><button>REZERVASİYA</button></a>
+                        <a href="/contacts"><button>RESERVATION</button></a>
                     </div>
                 </div>
             </div>
@@ -125,7 +131,7 @@
                         <span class="badge__char">L</span>	
                         <span class="badge__char">-</span>
 
-                        <img class="badge__emoji" src="img/static/croll_down.svg" alt="">
+                        <img class="badge__emoji" src="{{ url_for('static', filename='img/static/croll_down.svg') }}" alt="">
                     </div>
                 </a>
             </div>
@@ -140,21 +146,21 @@
                 <div class="ab_main_cont">
                     <div class="ab_main_title">
                         <h2>
-                            MÜASİR PAN-ASİYA MƏTBƏXİ
+                            Modern Pan-Asian cuisine
                         </h2>
                     </div>
                     <div class="ab_main_desc">
                         <p>
-                            Pan-Asiya müxtəlif Asiya ölkələrinin: Yaponiya, Tayland, Sinqapur, Malayziya, Çin və başqalarının kulinariya ənənələrini birləşdirən mətbəxdir. CHiNAR  Bakıda fusion mətbəxinin dadını hiss edə biləcəyiniz unikal məkandır.
+                            Pan-Asian is a cuisine that intertwines the culinary traditions of different Asian countries: Japan, Thailand, Singapore, Malaysia, China and others. CH<span class="lower_case">i</span>NAR  is a unique place in Baku, where you can experience the taste of fusion cusine.
                         </p>
                     </div>
                     <div class="ab_main_link">
-                        <a href="about_us_az.html">Ətraflı</a>
+                        <a href="/about_us">Read more</a>
                     </div>
                 </div>
             </div>
             <div class="ab_main_right">
-                <img src="img/main_page/pan-asian.png" alt="">
+                <img src="{{ url_for('static', filename='img/main_page/pan-asian.png') }}" alt="">
             </div>
         </div>
     </div>
@@ -164,22 +170,22 @@
     <div class="ab_main_wrapper">
         <div class="ab_main ab_right_text_wrapper">
             <div class="ab_main_left">
-                <img src="img/main_page/symph_of_flavours.png" alt="">
+                <img src="{{ url_for('static', filename='img/main_page/symph_of_flavours.png') }}" alt="">
             </div>
             <div class="ab_main_right ab_right_text">
                 <div class="ab_main_cont">
                     <div class="ab_main_title">
                         <h2>
-                            LƏZZƏTLƏRİN SİMFONİYASI
+                            Symphony of flavors
                         </h2>
                     </div>
                     <div class="ab_main_desc">
                         <p>
-                            CH<span class="lower_case">i</span>NAR yeməklərin ən yüksək keyfiyyətinə zəmanət vermək üçün etibarlı təchizatçılardan inqrediyentlər seçir və onları müasir, innovativ kulinariya metodları ilə birləşdirir.
+                            To ensure top-quality dishes, CH<span class="lower_case">i</span>NAR selects ingredients from trusted suppliers and combines them with modern, innovative culinary techniques. 
                         </p>
                     </div>
                     <div class="ab_main_link">
-                        <a href="menu_az.html">Menyu</a>
+                        <a href="/menu">View the menu</a>
                     </div>
                 </div>
             </div>
@@ -194,23 +200,21 @@
                 <div class="ab_main_cont">
                     <div class="ab_main_title">
                         <h2>
-                            ORİJİNAL VƏ ZƏRİF KOKTEYLLƏR
+                            Distinctive and refined cocktails
                         </h2>
                     </div>
                     <div class="ab_main_desc">
                         <p>
-                            <!-- Fərqli və mürəkkəb kokteyllər kolleksiyamızla miksoloqlarımızın bacarıqlarını hiss edin. Hər bir içki hissləri ləzzətləndirmək üçün nəzərdə tutulmuşdur, unikal ləzzətləri və yüksək keyfiyyətli inqrediyentləri birləşdirərək başqa heç kimi olmayan bir içki təcrübəsi yaradır. -->
-                            <!-- Fərqli və mürəkkəb kokteyllər kolleksiyamızla miksoloqlarımızın bacarıqlarını hiss edin. Hər bir içki hissləri həzz almaq üçün nəzərdə tutulmuşdur, unikal ləzzətləri və yüksək keyfiyyətli inqrediyentləri birləşdirərək özünəməxsus bir içki təcrübəsi yaradır. -->
-                            Miksoloqlarımızın sənətini fərqli və zərif kokteyllərimizlə kəşf edin. Hər bir içki duyğularınızı heyran etmək üçün hazırlanmışdır. Unikal dadlar və yüksək keyfiyyətli inqrediyentlər bir araya gələrək misilsiz bir içki təcrübəsi yaradır. İmza kokteyllərimizdən eksklüziv təkliflərimizə qədər, hər qurtum yenilik və incəliyi əks etdirir, CHiNAR hər ziyarəti dad və zəriflik səyahətinə çevirir.
+                            Experience the artistry of our mixologists with our collection of distinctive and refined cocktails. Each drink is crafted to delight the senses, blending unique flavors and premium ingredients to create an unparalleled drinking experience. From our signature creations to exclusive offerings, every sip embodies innovation and sophistication, making each visit to CH<span class="lower_case">i</span>NAR a journey of taste and refinement.
                         </p>
                     </div>
                     <div class="ab_main_link">
-                        <a href="menu_az.html">Menyu</a>
+                        <a href="/menu">View the list</a>
                     </div>
                 </div>
             </div>
             <div class="ab_main_right">
-                <img src="img/main_page/exclusive_list.jpg" alt="">
+                <img src="{{ url_for('static', filename='img/main_page/exclusive_list.jpg') }}" alt="">
             </div>
         </div>
     </div>
@@ -220,27 +224,32 @@
     <div class="chief_section_wrapper">
         <div class="chief_section">
             <div class="chief_section_left">
-                <img src="img/main_page/chief_section.png" alt="Gokhan Ozkol">
+                <img src="{{ url_for('static', filename='img/main_page/chief_section.png') }}" alt="Gokhan Ozkol">
             </div>
             <div class="chief_section_right">
                 <div class="chief_content_wrapper">
                     <div class="chief_desc">
                         <div class="chief_quote">
-                            <img src="img/static/quotes.webp" alt="">
+                            <img src="{{ url_for('static', filename='img/static/quotes.webp') }}" alt="">
                         </div>
                         <div class="chief_text">
                             <p>
-                                Yüksək yeməklər dünyasında müstəsna yeməyİn açarı sadəcə bacarıq deyİl, dərİn araşdırma və sarsılmaz səbrin birləşməsidir. Mənİm fəlsəfəm həmişə geniş araşdırmalar aparmaq və yalnız ən yaxşısına qərar vermək olub.
+                                In the world of haute cuisine, the key to 
+                                exceptional food is not just skill, but also a 
+                                blend of in-depth research and unwavering 
+                                patience. My philosophy has always been 
+                                to explore extensively and settle only 
+                                for the absolute best.
                             </p>
                         </div>
                     </div>
                     <div class="chief_name">
                         <div class="chief_name_cont">
                             <div class="chief_name_title">
-                                <p>BAŞ AŞPAZ</p>
+                                <p>EXECUTIVE CHEF</p>
                             </div>
                             <div class="chief_name_text">
-                                <p>Gökan Özkol</p>
+                                <p>Gokhan Ozkol</p>
                             </div>
                         </div>
                     </div>
@@ -256,21 +265,21 @@
             <div class="first_slide slide_item">
                 <div class="slider_text">
                     <p>
-                        CH<span class="lower_case">i</span>NAR onilliklər ərzində Bakının məşhur görkəmli görüş yerinə çüvrilmişdir. Bu gün CH<span class="lower_case">i</span>NAR dünyanın ən yaxşılarından olan yemək və əyləncə seçimlərinin geniş çeşidini təklif edir.
+                        CH<span class="lower_case">i</span>NAR has been famous Baku landmark and meeting place for decades. Today CH<span class="lower_case">i</span>NAR offers a range of dining and entertainment experiences that are amongst the finest in the world.
                     </p>
                 </div>
             </div>
             <div class="second_slide slide_item">
                 <div class="slider_text">
                     <p>
-                        CH<span class="lower_case">i</span>NAR-ın qorxulu əjdahanı əsarət altına alan mifik Azərbaycan qəhrəmanı Bəhram Gurdan ilhamlanıb. Həmçinin CH<span class="lower_case">i</span>NARIN yaxınlığında bu qəhrəmanın abidəsi var.
+                        CH<span class="lower_case">i</span>NAR is inspired by the mythical azeri hero Bahram Gur who slaved a formidable dragon. Also, near CH<span class="lower_case">i</span>NAR is the monument dedicated to this hero.
                     </p>
                 </div>
             </div>
             <div class="third_slide slide_item">
                 <div class="slider_text">
                     <p>
-                        CH<span class="lower_case">i</span>NAR əvvəlcə çinar ağaclarının olduğu bağın altındakı çay evi idi və indi isə müasir memarlığın möhtəşəm əsəri kimi yenidən doğulmuşdur.
+                        Originally tea house under a cluster of CH<span class="lower_case">i</span>NAR trees, CH<span class="lower_case">i</span>NAR has now been reborn as a magnificent building of contemporary architecture.
                     </p>
                 </div>
             </div>
@@ -285,21 +294,21 @@
                 <div class="ab_main_cont">
                     <div class="ab_main_title">
                         <h2>
-                            CH<span class="lower_case">i</span>NAR HARMONİYASI
+                            CH<span class="lower_case">i</span>NAR HARMONY
                         </h2>
                     </div>
                     <div class="ab_main_desc">
                         <p>
-                            Restoranımız atmosferi daha da xoş edəcək xüsusi seçilmiş pleylistlərə malikdir. Hər bir seçim yemək təcrübənizi tamamlamaq üçün düşünülmüş şəkildə seçilir, mürəkkəb və cəlbedici atmosfer yaradır.
+                            Our restaurant features curated playlists that capture and enhance the ambiance. Each selection is thoughtfully chosen to complement your dining experience, creating a sophisticated and inviting atmosphere. 
                         </p>
                     </div>
                     <div class="ab_main_link">
-                        <a href="https://soundcloud.com/chinarbaku?ref=clipboard&p=i&c=0&si=9BADAD3B985743F68856CEDE5ED86013&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank">Pleylistimiz</a>
+                        <a href="https://soundcloud.com/chinarbaku?ref=clipboard&p=i&c=0&si=9BADAD3B985743F68856CEDE5ED86013&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank">Listen our playlist</a>
                     </div>
                 </div>
             </div>
             <div class="ab_main_right">
-                <img src="img/main_page/soundChinar.jpg" alt="">
+                <img src="{{ url_for('static', filename='img/main_page/soundChinar.jpg') }}" alt="">
             </div>
         </div>
     </div>
@@ -309,24 +318,23 @@
     <div class="ab_main_wrapper" style="margin-bottom: 200px;">
         <div class="ab_main ab_right_text_wrapper">
             <div class="ab_main_left">
-                <img src="img/main_page/private_event_magic.png" alt="">
+                <img src="{{ url_for('static', filename='img/main_page/private_event_magic.png') }}" alt="">
             </div>
             <div class="ab_main_right ab_right_text">
                 <div class="ab_main_cont">
                     <div class="ab_main_title">
-                        <h2>                
-                            ÖZƏL TƏDBİRLƏRİN MÖCÜZƏSİ
+                        <h2>
+                            Private Event Magic
                         </h2>
                     </div>
                     <div class="ab_main_desc">
                         <p>
-                            <!-- Eksklüziv özəl tədbirlərimizdə özünüzü unudulmaz təcrübələrə qərq edin. Xüsusi məclislərdən tutmuş möhtəşəm bayramlara qədər biz gözləntiləri daha da sehrli anlar yaratmaqda ixtisaslaşırıq. -->
-                            Özəl tədbirlərinizlə unudulmaz təcrübəyə qərq olun. Xüsusi məclisləriniz üçün gözləntilərin üzərində olan sehrli anların hazırlanmasında ixtisaslaşırıq. Komandamız avtor kokteyllərdən və gurme mətbəxindən tutmuş və zərif atmosferə qədər hər bir detalın mükəmməl olmasını təmin edir. Hər hadisənin xüsusi bayrama çevrildiyi tədbirlərinizin sehrini bizimlə kəşf edin!
+                            <!-- With five distinct relaxation zones, including areas for private dining, every aspect of your visit, from our inviting ambiance to our meticulous service, is crafted to create moments. -->
+                            Immerse yourself in an unforgettable experience with our exclusive private events. From intimate gatherings to grand celebrations, we specialize in crafting magical moments that surpass expectations. Our dedicated team ensures every detail is perfect, from bespoke cocktails and gourmet cuisine to personalized service and elegant ambiance. Discover the enchantment of your next event with us, where every occasion is transformed into an extraordinary celebration.
                         </p>
                     </div>
                     <div class="ab_main_link ab_host_btn">
-                        <a href="events_az
-                        .html"><button>TƏDBİRİNİZİ KEÇİRİN</button></a>
+                        <a href="/events"><button>HOST YOUR EVENT</button></a>
                     </div>
                 </div>
             </div>
@@ -337,17 +345,17 @@
     <footer>
         <div class="footer_wrapper">
             <div class="footer_left_side">
-                <a href="index.html"><img src="img/static/Logo.webp" alt=""></a>
+                <a href="/index"><img src="{{ url_for('static', filename='img/static/Logo.webp') }}" alt=""></a>
             </div>
             <div class="footer_right_side">
                 <div class="footer_block">
                     <div class="footer_elem_title">
-                        <h3>ÜNVAN:</h3>
+                        <h3>ADRESS:</h3>
                         <br>
-                        <a href="https://maps.app.goo.gl/Vsk5XZ7RQjWQPXj96" target="_blank">Şövkət Ələkbərova küç.1, Bakı, Azərbaycan</a>
+                        <a href="https://maps.app.goo.gl/Vsk5XZ7RQjWQPXj96" target="_blank">Shovket Alakbarova Str.1, Baku, Azerbaijan</a>
                         <br>
                         <br>
-                        <h3>ƏLAQƏ NÖMRƏSİ:</h3>
+                        <h3>PHONE:</h3>
                         <br>
                         <a href="tel:+994124048211" target="_blank">+994 12 404 82 11</a>
                         <br>
@@ -359,26 +367,26 @@
                     <br>
                     <br>
                     <div class="media_links">
-                        <a href="https://www.instagram.com/chinardining/" class="insta_icon"><img src="img/static/insta.webp" alt=""></a>
-                        <a href="https://www.facebook.com/CHINARBAKU/"><img src="img/static/face.webp" alt=""></a>
+                        <a href="https://www.instagram.com/chinardining/" class="insta_icon"><img src="{{ url_for('static', filename='img/static/insta.webp') }}" alt=""></a>
+                        <a href="https://www.facebook.com/CHINARBAKU/"><img src="{{ url_for('static', filename='img/static/face.webp') }}" alt=""></a>
                     </div>
                 </div>
                 <div class="footer_block">
                     <div class="footer_elem_title">
-                        <h3>İŞ SAATLARI:</h3>
+                        <h3>OPENING HOURS:</h3>
                         <br>
                         <p>
-                            Çərşənbə axşamı, çərşənbə, cümə axşamı, bazar günləri saat 12:00 - 01:00
+                            Tuesday, Wednesday, Thursday, Sunday from 12 pm to 1 am
                         </p>
                         <br>
                         <br>
                         <p>
-                            Cümə, şənbə, bazar ertəsi saat 12:00 - 02:00
+                            Friday, Saturday, Monday from 12 pm to 2 am
                         </p>
                         <br>
                         <br>
                         <p>
-                            Teras axşam saat 6-dan açıqdı
+                            Terrace opened from 6pm
                         </p>
                     </div>
                 </div>
@@ -394,7 +402,7 @@
     
 
     <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <!-- HEADER VISIBILITY ANIMATION -->
     <script>
         // Header visibility on scroll
@@ -428,8 +436,8 @@
     <!-- OWL CAROUSEL SCRIPTS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        const prevIcon = '<img src="img/static/prev.webp" alt="">';
-        const nextIcon = '<img src="img/static/next.webp" alt="">';
+        const prevIcon = `<img src="{{ url_for('static', filename='img/static/prev.webp') }}" alt="">`;
+        const nextIcon = `<img src="{{ url_for('static', filename='img/static/next.webp') }}" alt="">`;
 
         $(document).ready(function(){
         $(".owl-carousel").owlCarousel({

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1, h2, h3 {
+            color: #ffffff;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Panel</h1>
+        <ul>
+            <li><a href="/admin/event/add">Add Event</a></li>
+            <li><a href="/admin-events">Manage Events</a></li>
+        </ul>
+        <div>
+            <h2>Edit Files</h2>
+            <h3>HTML files</h3>
+            <ul>
+                {% for file in html_files %}
+                    <li><a href="/admin/file/edit?filename={{ file }}">{{ file }}</a></li>
+                {% endfor %}
+            </ul>
+            <h3>CSS files</h3>
+            <ul>
+                {% for file in css_files %}
+                    <li><a href="/admin/file/edit?filename={{ file }}">{{ file }}</a></li>
+                {% endfor %}
+            </ul>
+            <h3>JS files</h3>
+            <ul>
+                {% for file in js_files %}
+                    <li><a href="/admin/file/edit?filename={{ file }}">{{ file }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

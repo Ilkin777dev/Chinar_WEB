@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit {{filename}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .CodeMirror {
+            flex: 1;
+            height: 100%;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            flex: 1;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .discard-button {
+            background-color: #f44336;
+        }
+        .discard-button:hover {
+            background-color: #e53935;
+        }
+    </style>
+</head>
+<body>
+    <form action="{{url}}" method="POST">
+        <textarea name="file-text" id="file-text">{{ content }}</textarea>
+        <div class="button-container">
+            <button type="submit">Save</button>
+            <button type="button" class="discard-button" onclick="window.location.reload();">Discard</button>
+        </div>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/javascript/javascript.min.js"></script>
+    <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById('file-text'), {
+            lineNumbers: true,
+            mode: 'htmlmixed',
+            theme: 'default'
+        });
+    </script>
+</body>
+</html>
