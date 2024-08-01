@@ -27,6 +27,7 @@ app.config['SECRET_KEY'] = SECRET_KEY
 
 db.init_app(app)
 
+db.create_all(app=app)
 
 login_manager = LoginManager(app)
 
