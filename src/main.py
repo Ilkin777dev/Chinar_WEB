@@ -252,7 +252,7 @@ def create_initial():
     if db.session.query(Event).count() == 0:
         event1 = Event(
             en_title="DINING ROOMS", az_title="DINING ROOMS",
-            az_content="İki lüks zalımız xüsusi tədbirlər keçirmək üçün mükəmməldir. Hər zal 16 qonağı qəbul edə bilər.",
+            az_content="İki lüks zalımız tədbirlər keçirmək üçün mükəmməldir. Hər zal 16 qonağı qəbul edə bilər.",
             en_content="Our two luxurious dining rooms are perfect for hosting private events. Each room can accommodate up to 16 guests.",
             image="vip_lounge.png")
         event2 = Event("DRAGON LOUNGE","DRAGON LOUNGE",
@@ -265,7 +265,7 @@ def create_initial():
                     "chinarDining_slider_bg.png")
         
         event4 = Event("BAMBOO BAR", "BAMBOO BAR",
-                    "Bamboo Bar görüşlər və xüsusi tədbirlər üçün ideal yerdir. 48 nəfərə qədər qonaq qəbul edə bilən Bamboo Bar istənilən hadisə üçün mükəmməl məkandır.",
+                    "Bamboo Bar görüşlər və tədbirlər üçün ideal yerdir. 48 nəfərə qədər qonaq qəbul edə bilən Bamboo Bar istənilən hadisə üçün mükəmməl məkandır.",
                     "The Bamboo Bar is an ideal spot for gatherings and special events. With the capacity to host up to 48 guests, it’s a perfect venue for any occasion.",
                     "bambooBar_slider_bg.png")
         
