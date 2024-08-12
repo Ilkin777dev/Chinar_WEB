@@ -27,7 +27,12 @@ app.config['SECRET_KEY'] = SECRET_KEY
 
 db.init_app(app)
 
-db.create_all(app=app)
+with app.app_context():
+    try:
+            db.create_all()
+            db.metadata.create_all(tables=[Event, Admin])
+    except:
+            pass
 
 login_manager = LoginManager(app)
 
@@ -275,6 +280,29 @@ def create_initial():
         db.session.add(event5)
         db.session.commit()
     return redirect("/admin")
+
+@app.route("/admin/change/password", methods=["GET", "POST"])
+@login_required
+def change_password():
+    if request.method == "POST":
+        old_password = request.form["old_password"]
+        new_password = request.form["new_password"]
+        confirm_password = request.form["confirm_password"]
+
+        if new_password != confirm_password:
+            flash("Passwords do not match")
+            return render_template("admin/change_password.html")
+
+        admin = db.session.query(Admin).get(current_user.id)
+        if admin.password != old_password:
+            flash("Old password is incorrect")
+            return render_template("admin/change_password.html")
+
+        admin.password = new_password
+        db.session.add(admin)
+        db.session.commit()
+
+        return redirect("/admin")
 
 @app.route("/admin/logout")
 @login_required
