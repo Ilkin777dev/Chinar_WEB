@@ -8,6 +8,7 @@ from environs import Env
 sys.path.append("src")
 
 from models import Admin, Event, db
+from utils import send_email
 
 
 env = Env()
@@ -18,6 +19,7 @@ ADMIN_PASSWORD = env("ADMIN_PASSWORD", "admin")
 SECRET_KEY = env("SECRET_KEY", os.urandom(24))
 DATABASE_URI = 'sqlite:///site.db'
 UPLOAD_FOLDER = 'src/static/img/events_page'
+OWNER_EMAIL = env("OWNER_EMAIL", "owner@localhost")
 
 app = Flask(__name__)
 
@@ -120,6 +122,26 @@ def gallery_az():
 @app.route("/menu_az")
 def menu_az():
     return render_template("menu_az.html")
+
+@app.post("/voucher")
+def register_voucher():
+    form_data = request.form
+    message = f"Hello, Client {form_data['name']} {form_data['surname']} has requested {form_data['voucherCount']} vouchers, each for {form_data['voucherPrice']} AZN. The total price is {int(form_data['voucherCount']) * int(form_data['voucherPrice'])} AZN. The client's email address is {form_data['email']} and phone number is {form_data['phone']}."
+    send_email(OWNER_EMAIL, 
+                message, 
+                "Voucher Request", 
+                "Voucher Request")
+    return redirect("/about_us")
+
+@app.post("/voucher_az")
+def register_voucher_az():
+    form_data = request.form
+    message = f"Hello, Client {form_data['name']} {form_data['surname']} has requested {form_data['voucherCount']} vouchers, each for {form_data['voucherPrice']} AZN. The total price is {int(form_data['voucherCount']) * int(form_data['voucherPrice'])} AZN. The client's email address is {form_data['email']} and phone number is {form_data['phone']}."
+    send_email(OWNER_EMAIL,
+                message, 
+                "Voucher Request", 
+                "Voucher Request")
+    return redirect("/about_us_az")
 
 # Admin panel
 
