@@ -19,6 +19,7 @@ ADMIN_PASSWORD = env("ADMIN_PASSWORD", "admin")
 SECRET_KEY = env("SECRET_KEY", os.urandom(24))
 DATABASE_URI = f"postgresql+psycopg2://{env('DB_USER', 'postgres')}:{env('DB_PASSWORD', 'postgres')}@{env('DB_HOST', 'localhost')}:{env('DB_PORT', '5432')}/{env('DB_NAME', 'postgres')}"
 UPLOAD_FOLDER = 'src/static/img/events_page'
+VOLUME_FOLDER = '/static_files'
 OWNER_EMAIL = env("OWNER_EMAIL", "owner@localhost")
 
 app = Flask(__name__)
@@ -296,28 +297,45 @@ def create_initial():
         db.session.commit()
     return redirect("/admin")
 
-@app.route("/admin/change/password", methods=["GET", "POST"])
-@login_required
-def change_password():
-    if request.method == "POST":
-        old_password = request.form["old_password"]
-        new_password = request.form["new_password"]
-        confirm_password = request.form["confirm_password"]
+# @app.route("/admin/change/password", methods=["GET", "POST"])
+# @login_required
+# def change_password():
+#     if request.method == "POST":
+#         old_password = request.form["old_password"]
+#         new_password = request.form["new_password"]
+#         confirm_password = request.form["confirm_password"]
 
-        if new_password != confirm_password:
-            flash("Passwords do not match")
-            return render_template("admin/change_password.html")
+#         if new_password != confirm_password:
+#             flash("Passwords do not match")
+#             return render_template("admin/change_password.html")
 
-        admin = db.session.query(Admin).get(current_user.id)
-        if admin.password != old_password:
-            flash("Old password is incorrect")
-            return render_template("admin/change_password.html")
+#         admin = db.session.query(Admin).get(current_user.id)
+#         if admin.password != old_password:
+#             flash("Old password is incorrect")
+#             return render_template("admin/change_password.html")
 
-        admin.password = new_password
-        db.session.add(admin)
-        db.session.commit()
+#         admin.password = new_password
+#         db.session.add(admin)
+#         db.session.commit()
 
-        return redirect("/admin")
+#         return redirect("/admin")
+
+@app.get("/admin/gallery")
+def admin_galley():
+    return render_template("admin/gallery.html")
+
+@app.post("/admin/gallery")
+def upload_image():
+    images = request.files.getlist("images")
+    gallery_folder = os.path.join(VOLUME_FOLDER, "img", "gallery")
+
+    os.makedirs(gallery_folder, exist_ok=True)
+
+    for image in images:
+        filename = secure_filename(image.filename)
+        image.save(os.path.join(gallery_folder, filename))
+    
+    return redirect("/admin/gallery")
 
 @app.route("/admin/logout")
 @login_required
