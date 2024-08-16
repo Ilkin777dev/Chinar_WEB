@@ -17,7 +17,7 @@ env.read_env()
 ADMIN_EMAIL = env("ADMIN_EMAIL", "admin@localhost")
 ADMIN_PASSWORD = env("ADMIN_PASSWORD", "admin")
 SECRET_KEY = env("SECRET_KEY", os.urandom(24))
-DATABASE_URI = 'sqlite:///site.db'
+DATABASE_URI = f"postgresql+psycopg2://{env('DB_USER', 'postgres')}:{env('DB_PASSWORD', 'postgres')}@{env('DB_HOST', 'localhost')}:{env('DB_PORT', '5432')}/{env('DB_NAME', 'postgres')}"
 UPLOAD_FOLDER = 'src/static/img/events_page'
 OWNER_EMAIL = env("OWNER_EMAIL", "owner@localhost")
 
@@ -28,13 +28,6 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['SECRET_KEY'] = SECRET_KEY
 
 db.init_app(app)
-
-with app.app_context():
-    try:
-            db.create_all()
-            db.metadata.create_all(tables=[Event, Admin])
-    except:
-            pass
 
 login_manager = LoginManager(app)
 
@@ -331,6 +324,10 @@ def change_password():
 def logout():
     logout_user()
     return redirect("/")
+
+@app.route("/robots.txt")
+def robots():
+    return os.path.join(app.root_path, "static", "robots.txt")
 
 if __name__ == "__main__":
     app.run(debug=True)
