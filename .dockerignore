@@ -1,0 +1,53 @@
+# Ignore Python bytecode files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Ignore virtual environment directories
+venv/
+ENV/
+env/
+.venv/
+
+# Ignore development and debugging files
+.vscode/
+.idea/
+*.bak
+*.swp
+*.swo
+
+# Ignore distribution files
+dist/
+build/
+*.egg-info/
+
+# Ignore logs and databases
+*.log
+*.sqlite3
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore coverage reports
+htmlcov/
+.coverage
+.coverage.*
+
+# Ignore mypy type checker reports
+.mypy_cache/
+
+# Ignore pytest cache
+.pytest_cache/
+
+# Ignore tox environments
+.tox/
+
+# Ignore temporary files
+*.tmp
+*.temp
+*.~*
+
+# Ignore Docker files
+Dockerfile
+docker-compose.yml

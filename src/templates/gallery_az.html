@@ -26,7 +26,62 @@
       opacity: 1;
       transition: all 2s ease 0s;
     }
+
+    .fade-in {
+        opacity: 0.3;
+        transition: opacity 10s all;
+    }
+
+    .fade-in.show {
+        transition: opacity 10s all;
+        opacity: 1;
+    }
+
+    #loadmorediv {
+        text-align: center;
+        margin-top: 50px;
+    }
   </style>
+
+<script>
+  function loadMoreImages() {
+      const column1 = document.getElementById('column-1');
+      const column2 = document.getElementById('column-2');
+      const column3 = document.getElementById('column-3');
+      const column4 = document.getElementById('column-4');
+
+      fetch('/gallery/images')
+          .then(response => response.json())
+          .then(data => {
+              data.forEach((image, index) => {
+                  const img = document.createElement('img');
+                  img.src = "/gallery/image/" + image;
+                  img.classList.add('fade-in');
+
+                  if (index % 4 === 0) {
+                      column1.appendChild(img);
+                  } else if (index % 4 === 1) {
+                      column2.appendChild(img);
+                  } else if (index % 4 === 2) {
+                      column3.appendChild(img);
+                  } else {
+                      column4.appendChild(img);
+                  }
+
+                  // setTimeout(() => {
+                  //     img.classList.add('show');
+                  // }, 50);
+
+                  let opacity = 0;
+                  let fadeIn = setInterval(() => {
+                    img.style.opacity = opacity;
+                    opacity += 0.01;
+                  }, 30);
+              });
+          });
+      document.getElementById('loadmorediv').style.display = 'none';
+  }
+  </script>
 
   <!-- HEADER -->
   <header>
@@ -84,7 +139,7 @@
 
     <div class="gallery_content_wrapper plav">
       <div class="grid-container">
-        <div class="column">
+        <div class="column" id="column-1">
           <img src="static/img/gallery_page/gal_1_1.png" />
 
           <img src="static/img/gallery_page/gal_1_2.png" />
@@ -96,7 +151,7 @@
           <img src="static/img/gallery_page/gal_1_5.jpg">
         </div>
 
-        <div class="column">
+        <div class="column" id="column-2">
           <img src="static/img/gallery_page/gal_2_1.png" />
 
           <img src="static/img/gallery_page/gal_2_2.png" />
@@ -108,7 +163,7 @@
           <img src="static/img/gallery_page/gal_2_5.jpg">
         </div>
 
-        <div class="column">
+        <div class="column" id="column-3">
           <img src="static/img/gallery_page/gal_3_1.png" />
 
           <img src="static/img/gallery_page/gal_3_2.png" />
@@ -120,7 +175,7 @@
           <img src="static/img/gallery_page/gal_3_5.jpg">
         </div>
 
-        <div class="column">
+        <div class="column" id="column-4">
           <img src="static/img/gallery_page/gal_4_1.png" />
 
           <img src="static/img/gallery_page/gal_4_2.png" />
@@ -131,6 +186,10 @@
 
           <img src="static/img/gallery_page/gal_4_5.jpg">
         </div>
+      </div>
+
+      <div class="join_us_btn" id="loadmorediv">
+        <a target="_blank" onclick="loadMoreImages()"><button>DİGƏR ŞƏKİLLƏR</button></a>
       </div>
     </div>
 

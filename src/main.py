@@ -1,15 +1,20 @@
 import os
 import sys
-from flask import Flask, flash, render_template, redirect, request
+from flask import Flask, flash, render_template, redirect, jsonify, send_file, request, abort
 from werkzeug.utils import secure_filename
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 from environs import Env
 
 sys.path.append("src")
 
-from models import Admin, Event, db
+from models import Admin, Event, FormSubmission, GalleryImage, db
 from utils import send_email
 
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+
+logger = logging.getLogger("gunicorn.error")
 
 env = Env()
 env.read_env()
@@ -18,14 +23,13 @@ ADMIN_EMAIL = env("ADMIN_EMAIL", "admin@localhost")
 ADMIN_PASSWORD = env("ADMIN_PASSWORD", "admin")
 SECRET_KEY = env("SECRET_KEY", os.urandom(24))
 DATABASE_URI = f"postgresql+psycopg2://{env('DB_USER', 'postgres')}:{env('DB_PASSWORD', 'postgres')}@{env('DB_HOST', 'localhost')}:{env('DB_PORT', '5432')}/{env('DB_NAME', 'postgres')}"
-UPLOAD_FOLDER = 'src/static/img/events_page'
-VOLUME_FOLDER = '/static_files'
+UPLOAD_FOLDER = 'src/static/img'
 OWNER_EMAIL = env("OWNER_EMAIL", "owner@localhost")
 
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URI
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['UPLOAD_FOLDER'] = os.path.join(app.root_path, 'static', 'img')
 app.config['SECRET_KEY'] = SECRET_KEY
 
 db.init_app(app)
@@ -35,9 +39,6 @@ login_manager = LoginManager(app)
 @login_manager.user_loader
 def load_user(user_id):
     return db.session.query(Admin).get(user_id)
-
-if not os.path.exists(UPLOAD_FOLDER):
-    os.makedirs(UPLOAD_FOLDER)
 
 def get_static_files():
     css_files = []
@@ -117,26 +118,6 @@ def gallery_az():
 def menu_az():
     return render_template("menu_az.html")
 
-@app.post("/voucher")
-def register_voucher():
-    form_data = request.form
-    message = f"Hello, Client {form_data['name']} {form_data['surname']} has requested {form_data['voucherCount']} vouchers, each for {form_data['voucherPrice']} AZN. The total price is {int(form_data['voucherCount']) * int(form_data['voucherPrice'])} AZN. The client's email address is {form_data['email']} and phone number is {form_data['phone']}."
-    send_email(OWNER_EMAIL, 
-                message, 
-                "Voucher Request", 
-                "Voucher Request")
-    return redirect("/about_us")
-
-@app.post("/voucher_az")
-def register_voucher_az():
-    form_data = request.form
-    message = f"Hello, Client {form_data['name']} {form_data['surname']} has requested {form_data['voucherCount']} vouchers, each for {form_data['voucherPrice']} AZN. The total price is {int(form_data['voucherCount']) * int(form_data['voucherPrice'])} AZN. The client's email address is {form_data['email']} and phone number is {form_data['phone']}."
-    send_email(OWNER_EMAIL,
-                message, 
-                "Voucher Request", 
-                "Voucher Request")
-    return redirect("/about_us_az")
-
 # Admin panel
 
 @app.route("/login", methods=["GET", "POST"])
@@ -148,7 +129,9 @@ def login():
         email = request.form["email"]
         password = request.form["password"]
 
-        if email == ADMIN_EMAIL and password == ADMIN_PASSWORD:
+        admin = db.session.query(Admin).filter_by(email=email).first()
+
+        if email == ADMIN_EMAIL and password == admin.password:
             admin = db.session.query(Admin).filter_by(email=email).first()
             if admin is None:
                 admin = Admin(email=email, password=password)
@@ -164,6 +147,7 @@ def login():
             flash("Invalid email or password")
 
     return render_template("admin/login.html")
+
 @app.route("/admin")
 @login_required
 def admin():
@@ -190,14 +174,14 @@ def add_event():
 
         if image:
             filename = secure_filename(image.filename)
-            image.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            image.save(os.path.join(app.config['UPLOAD_FOLDER'] + "/events_page/", filename))
 
             event = Event(
                 en_title=title_en,
                 az_title=title_az,
                 en_content=content_en,
                 az_content=content_az,
-                image=filename
+                image=app.config['UPLOAD_FOLDER'] + "/events_page/" + filename
             )
             db.session.add(event)
             db.session.commit()
@@ -232,7 +216,7 @@ def edit_event(event_id):
         if image:
             filename = secure_filename(image.filename)
             image.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            event.image = filename
+            event.image = app.config['UPLOAD_FOLDER'] + "/events_page/" + filename
 
         db.session.add(event)
         db.session.commit()
@@ -250,7 +234,6 @@ def edit_file():
         content = request.form["file-text"]
 
         content = content.replace('\r\n', '\n').replace('\r', '\n')
-
 
         with open(filename, "w") as file:
             file.write(content)
@@ -297,51 +280,153 @@ def create_initial():
         db.session.commit()
     return redirect("/admin")
 
-# @app.route("/admin/change/password", methods=["GET", "POST"])
-# @login_required
-# def change_password():
-#     if request.method == "POST":
-#         old_password = request.form["old_password"]
-#         new_password = request.form["new_password"]
-#         confirm_password = request.form["confirm_password"]
+@app.route("/admin/change/password", methods=["GET", "POST"])
+@login_required
+def change_password():
+    if request.method == "POST":
+        old_password = request.form["old_password"]
+        new_password = request.form["new_password"]
+        confirm_password = request.form["confirm_password"]
 
-#         if new_password != confirm_password:
-#             flash("Passwords do not match")
-#             return render_template("admin/change_password.html")
+        if new_password != confirm_password:
+            flash("Passwords do not match")
+            return render_template("admin/change_password.html")
 
-#         admin = db.session.query(Admin).get(current_user.id)
-#         if admin.password != old_password:
-#             flash("Old password is incorrect")
-#             return render_template("admin/change_password.html")
+        admin = db.session.query(Admin).get(current_user.id)
+        if admin.password != old_password:
+            flash("Old password is incorrect")
+            return render_template("admin/change_password.html")
 
-#         admin.password = new_password
-#         db.session.add(admin)
-#         db.session.commit()
+        admin.password = new_password
+        db.session.add(admin)
+        db.session.commit()
 
-#         return redirect("/admin")
-
-@app.get("/admin/gallery")
-def admin_galley():
-    return render_template("admin/gallery.html")
-
-@app.post("/admin/gallery")
-def upload_image():
-    images = request.files.getlist("images")
-    gallery_folder = os.path.join(VOLUME_FOLDER, "img", "gallery")
-
-    os.makedirs(gallery_folder, exist_ok=True)
-
-    for image in images:
-        filename = secure_filename(image.filename)
-        image.save(os.path.join(gallery_folder, filename))
+        return redirect("/admin")
     
-    return redirect("/admin/gallery")
+    return render_template("admin/change_password.html")
+
+@app.post("/voucher")
+def register_voucher():
+    form_data = request.form
+
+    submission = FormSubmission(data=form_data)
+
+    db.session.add(submission)
+    db.session.commit()
+
+    message = f"Hello, Client {form_data['name']} {form_data['surname']} has requested {form_data['voucherCount']} vouchers, each for {form_data['voucherPrice']} AZN. The total price is {int(form_data['voucherCount']) * int(form_data['voucherPrice'])} AZN. The client's email address is {form_data['email']} and phone number is {form_data['phone']}."
+    send_email(OWNER_EMAIL, 
+                message, 
+                "Voucher Request", 
+                "Voucher Request")
+    return redirect("/about_us")
+
+@app.post("/voucher_az")
+def register_voucher_az():
+    form_data = request.form
+
+    submission = FormSubmission(data=form_data)
+
+    db.session.add(submission)
+    db.session.commit()
+
+    message = f"Hello, Client {form_data['name']} {form_data['surname']} has requested {form_data['voucherCount']} vouchers, each for {form_data['voucherPrice']} AZN. The total price is {int(form_data['voucherCount']) * int(form_data['voucherPrice'])} AZN. The client's email address is {form_data['email']} and phone number is {form_data['phone']}."
+    send_email(OWNER_EMAIL,
+                message, 
+                "Voucher Request", 
+                "Voucher Request")
+    return redirect("/about_us_az")
+
+@app.post("/form/submission")
+def submit_form():
+    data = request.form
+    form_submission = FormSubmission(data)
+    db.session.add(form_submission)
+    db.session.commit()
+
+    return redirect("/")
+
+@app.get("/admin/form/submissions")
+@login_required
+def form_submissions():
+    submissions = db.session.query(FormSubmission).all()
+    return render_template("admin/form_submissions.html", submissions=submissions)
+
+@app.post("/admin/form/submissions/delete")
+@login_required
+def delete_submissions():
+    db.session.query(FormSubmission).delete()
+    db.session.commit()
+
+    return redirect("/admin/form/submissions")
 
 @app.route("/admin/logout")
 @login_required
 def logout():
     logout_user()
     return redirect("/")
+
+@app.get("/admin/gallery")
+def admin_galley():
+    images = db.session.query(GalleryImage).all()
+    return render_template("admin/gallery.html", images=images)
+
+@app.post("/admin/gallery/delete/<int:image_id>")
+def delete_gallery_image(image_id):
+    image = db.session.query(GalleryImage).get(image_id)
+    if image is None:
+        abort(404)
+
+    image_path = os.path.join(app.config['UPLOAD_FOLDER'], "gallery_uploads", image.image_url)
+    
+    if os.path.exists(image_path):
+        os.remove(image_path)
+    else:
+        print(f"File not found: {image_path}")
+
+    db.session.delete(image)
+    db.session.commit()
+
+    return redirect("/admin/gallery")
+
+@app.post("/admin/gallery/add")
+def add_gallery_image():
+    images = request.files.getlist("images")
+
+    os.makedirs(app.config['UPLOAD_FOLDER'] + "/gallery_uploads/", exist_ok=True)
+
+    for image in images:
+        logger.info(image)
+        filename = secure_filename(image.filename)
+        image.save(os.path.join(app.config['UPLOAD_FOLDER'] + "/gallery_uploads/" + filename))
+
+        logger.info(filename)
+        gallery_image = GalleryImage(image_url=filename)
+
+        logger.info("JEEFRSDAS")
+        db.session.add(gallery_image)
+
+        db.session.commit()
+
+    return redirect("/admin/gallery")
+
+@app.get("/gallery/images")
+def get_gallery_images():
+    images = db.session.query(GalleryImage).all()
+
+    images = [image.id for image in images]
+
+    return jsonify(images)
+
+@app.get("/gallery/image/<int:image_id>")
+def get_gallery_image(image_id):
+    image = db.session.query(GalleryImage).get(image_id)
+    if image is None:
+        abort(404)
+    image_path = os.path.join(app.config['UPLOAD_FOLDER'], "gallery_uploads", image.image_url)
+    if not os.path.exists(image_path):
+        abort(404)
+    return send_file(image_path, mimetype='image')
 
 @app.route("/robots.txt")
 def robots():

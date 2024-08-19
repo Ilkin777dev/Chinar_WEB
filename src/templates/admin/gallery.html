@@ -68,14 +68,29 @@
     </style>
 </head>
 <body>
-    <div>
-        <div class="container">
-            <h1>Edit Gallery</h1>
-            <form action="/admin/gallery" method="POST" id="gallery_form">
-                <input type="file" name="image" placeholder="Image" multiple>
-                <button type="submit">SUBMIT</button>
-            </form>
-            <button class="exit-button" onclick="window.location.href = '/admin';">EXIT</button>
+    <div style="display: flex; flex-direction: column; text-align: center;">
+        <div style="text-align: center;">
+            <div class="container" style="margin: auto;">
+                <h1>Edit Gallery</h1>
+                <form action="/admin/gallery/add" method="POST" id="gallery_form" enctype=multipart/form-data>
+                    <input type="file" name="images" placeholder="Image" multiple>
+                    <button type="submit">SUBMIT</button>
+                </form>
+                <button class="exit-button" onclick="window.location.href = '/admin';">EXIT</button>
+            </div>
+        </div>
+        <div>
+            <h2>Current Images</h2>
+            <div style="display: flex; overflow-x:scroll; width: 800px">
+                {% for image in images %}
+                <div style="display: flex; flex-direction: column; justify-content: space-between; margin: 20px">
+                    <img src="/gallery/image/{{ image.id }}" alt="image" style="margin-bottom: 10px;">
+                    <form action="/admin/gallery/delete/{{ image.id }}" method="POST">
+                        <button class="exit-button" type="submit">DELETE</button>
+                    </form>
+                </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 </body>

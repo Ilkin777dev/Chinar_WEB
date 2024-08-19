@@ -36,7 +36,20 @@ def upgrade() -> None:
         sa.Column('image', sa.String, nullable=True)
     )
 
+    op.create_table(
+        'form_submission',
+        sa.Column('id', sa.Integer, primary_key=True),
+        sa.Column('data', sa.JSON, nullable=True)
+    )
+
+    op.create_table(
+        'gallery_image',
+        sa.Column('id', sa.Integer, primary_key=True),
+        sa.Column('image_url', sa.String, nullable=True)
+    )
 
 def downgrade() -> None:
     op.drop_table('event')
     op.drop_table('admin')
+    op.drop_table('gallery_image')
+    op.drop_table('form_submission')

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Form Submissions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2c2c2c;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+            margin: 0 auto;
+            background-color: #333333;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .back-link {
+            display: block;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .submission-box {
+            border: 1px solid #dddddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .submission-box h3 {
+            margin: 0 0 10px 0;
+            color: #555555;
+        }
+        .submission-box .data-item {
+            margin: 5px 0;
+        }
+        .submission-box .data-item h4 {
+            margin: 0;
+            color: #777777;
+        }
+        button {
+            background-color: #af4c4c;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 0;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button a {
+            color: white;
+            text-decoration: none;
+        }
+
+        button:hover {
+            background-color: #a04545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Manage Form Submissions</h1>
+        <div class="back-link">
+            <a href="/admin">Back to admin panel</a>
+        </div>
+        <div>
+            <h2 style="text-align: center; color: white;">Form submissions</h2>
+            <div style="text-align: center;">
+                <form action="/admin/form/submissions/delete" method="POST">
+                    <button type="submit">
+                        Delete all submissions
+                    </button>
+                </form>
+            </div>
+            {% for submission in submissions %}
+                <div class="submission-box">
+                    <h3>Submission ID: {{ submission.id }}</h3>
+                    <div>
+                        {% for key, value in submission.data.items() %}
+                            <div class="data-item">
+                                <h4>{{ key }}: {{ value }}</h4>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

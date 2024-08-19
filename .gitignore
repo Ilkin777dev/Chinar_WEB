@@ -126,3 +126,5 @@ cython_debug/
 .vscode/
 
 instance/
+
+gallery_uploads/
