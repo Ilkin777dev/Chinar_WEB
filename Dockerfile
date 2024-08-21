@@ -10,6 +10,4 @@ COPY . .
 
 VOLUME [ "/chinarv" ]
 
-# CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:80", "src.main:app"]
-
-CMD ["python", "src/main.py"]
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:80", "src.main:app"]

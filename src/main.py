@@ -14,9 +14,6 @@ from utils import send_email
 env = Env()
 env.read_env()
 
-logging.basicConfig(level=logging.DEBUG)
-
-logger = logging.getLogger(__name__)
 
 ADMIN_EMAIL = env("ADMIN_EMAIL", "admin@localhost")
 ADMIN_PASSWORD = env("ADMIN_PASSWORD", "admin")
@@ -287,7 +284,7 @@ def get_event(event_id):
     if img_url.startswith("volume"):
         print("Volume image")
         return send_file(os.path.join(UPLOAD_FOLDER, img_url), mimetype='image')
-    return send_file("src/static/images/" + img_url, mimetype='image')
+    return send_file("static/img/events_page/" + img_url, mimetype='image')
 
 @app.route("/admin/change/password", methods=["GET", "POST"])
 @login_required
@@ -407,12 +404,6 @@ def add_gallery_image():
     for image in images:
         filename = secure_filename(image.filename)
         image.save(os.path.join(app.config['UPLOAD_FOLDER'] + filename))
-        print(filename)
-        print(app.config['UPLOAD_FOLDER'])
-        print(os.path.join(app.config['UPLOAD_FOLDER'] + filename))
-        logger.info(f"Image saved: {filename}")
-        logger.info(f"Image saved: {app.config['UPLOAD_FOLDER'] + filename}")
-        logger.info(f"Image saved: {os.path.join(app.config['UPLOAD_FOLDER'] + filename)}")
 
         gallery_image = GalleryImage(image_url=filename)
 
@@ -436,8 +427,6 @@ def get_gallery_image(image_id):
     if image is None:
         abort(404)
     image_path = os.path.join(UPLOAD_FOLDER, image.image_url)
-    print(image_path)
-    logger.info(f"Image path: {image_path}")
     if not os.path.exists(image_path):
         abort(404)
     return send_file(image_path, mimetype='image')
@@ -446,5 +435,5 @@ def get_gallery_image(image_id):
 def robots():
     return os.path.join(app.root_path, "static", "robots.txt")
 
-if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=5000)
+# if __name__ == "__main__":
+#     app.run(debug=True, host="0.0.0.0", port=5000)
