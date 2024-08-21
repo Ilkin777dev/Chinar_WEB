@@ -1490,6 +1490,17 @@ width: 80%; /* Could be more or less, depending on screen size */
   margin-top: 40px;
 }
 
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 20px 10px !important;
+    width: 100% !important;
+  }
+
+  .model-content form {
+    padding: 20px !important;
+  }
+}
+
 /* The Close Button */
 .close {
 color: #aaa;

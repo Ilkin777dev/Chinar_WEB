@@ -31,5 +31,5 @@ SECRET_KEY=your_secret_key
 5. Run Docker container
 
 ```bash
-docker run -d --env-file=.env -p 80:80 chinar_web
+docker run -d --env-file=.env -p 80:80 -v /root/chinarv:/chinarv rasadov/chinar
 ```

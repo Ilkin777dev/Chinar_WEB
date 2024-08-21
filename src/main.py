@@ -4,32 +4,31 @@ from flask import Flask, flash, render_template, redirect, jsonify, send_file, r
 from werkzeug.utils import secure_filename
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 from environs import Env
+import logging
 
 sys.path.append("src")
 
 from models import Admin, Event, FormSubmission, GalleryImage, db
 from utils import send_email
 
-import logging
+env = Env()
+env.read_env()
 
 logging.basicConfig(level=logging.DEBUG)
 
-logger = logging.getLogger("gunicorn.error")
-
-env = Env()
-env.read_env()
+logger = logging.getLogger(__name__)
 
 ADMIN_EMAIL = env("ADMIN_EMAIL", "admin@localhost")
 ADMIN_PASSWORD = env("ADMIN_PASSWORD", "admin")
 SECRET_KEY = env("SECRET_KEY", os.urandom(24))
 DATABASE_URI = f"postgresql+psycopg2://{env('DB_USER', 'postgres')}:{env('DB_PASSWORD', 'postgres')}@{env('DB_HOST', 'localhost')}:{env('DB_PORT', '5432')}/{env('DB_NAME', 'postgres')}"
-UPLOAD_FOLDER = 'src/static/img'
+UPLOAD_FOLDER = env("UPLOAD_FOLDER", "/chinarv/")
 OWNER_EMAIL = env("OWNER_EMAIL", "owner@localhost")
 
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URI
-app.config['UPLOAD_FOLDER'] = os.path.join(app.root_path, 'static', 'img')
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['SECRET_KEY'] = SECRET_KEY
 
 db.init_app(app)
@@ -174,14 +173,14 @@ def add_event():
 
         if image:
             filename = secure_filename(image.filename)
-            image.save(os.path.join(app.config['UPLOAD_FOLDER'] + "/events_page/", filename))
+            image.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
             event = Event(
                 en_title=title_en,
                 az_title=title_az,
                 en_content=content_en,
                 az_content=content_az,
-                image=app.config['UPLOAD_FOLDER'] + "/events_page/" + filename
+                image=app.config['UPLOAD_FOLDER'] + filename
             )
             db.session.add(event)
             db.session.commit()
@@ -216,7 +215,7 @@ def edit_event(event_id):
         if image:
             filename = secure_filename(image.filename)
             image.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            event.image = app.config['UPLOAD_FOLDER'] + "/events_page/" + filename
+            event.image = app.config['UPLOAD_FOLDER'] + filename
 
         db.session.add(event)
         db.session.commit()
@@ -279,6 +278,16 @@ def create_initial():
         db.session.add(event5)
         db.session.commit()
     return redirect("/admin")
+
+@app.get("/event/<int:event_id>")
+def get_event(event_id):
+    img_url = db.session.query(Event).get(event_id).image
+    if img_url is None:
+        abort(404)
+    if img_url.startswith("volume"):
+        print("Volume image")
+        return send_file(os.path.join(UPLOAD_FOLDER, img_url), mimetype='image')
+    return send_file("src/static/images/" + img_url, mimetype='image')
 
 @app.route("/admin/change/password", methods=["GET", "POST"])
 @login_required
@@ -377,8 +386,8 @@ def delete_gallery_image(image_id):
     if image is None:
         abort(404)
 
-    image_path = os.path.join(app.config['UPLOAD_FOLDER'], "gallery_uploads", image.image_url)
-    
+    image_path = os.path.join(app.config['UPLOAD_FOLDER'], image.image_url)
+
     if os.path.exists(image_path):
         os.remove(image_path)
     else:
@@ -393,17 +402,20 @@ def delete_gallery_image(image_id):
 def add_gallery_image():
     images = request.files.getlist("images")
 
-    os.makedirs(app.config['UPLOAD_FOLDER'] + "/gallery_uploads/", exist_ok=True)
+    os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
     for image in images:
-        logger.info(image)
         filename = secure_filename(image.filename)
-        image.save(os.path.join(app.config['UPLOAD_FOLDER'] + "/gallery_uploads/" + filename))
+        image.save(os.path.join(app.config['UPLOAD_FOLDER'] + filename))
+        print(filename)
+        print(app.config['UPLOAD_FOLDER'])
+        print(os.path.join(app.config['UPLOAD_FOLDER'] + filename))
+        logger.info(f"Image saved: {filename}")
+        logger.info(f"Image saved: {app.config['UPLOAD_FOLDER'] + filename}")
+        logger.info(f"Image saved: {os.path.join(app.config['UPLOAD_FOLDER'] + filename)}")
 
-        logger.info(filename)
         gallery_image = GalleryImage(image_url=filename)
 
-        logger.info("JEEFRSDAS")
         db.session.add(gallery_image)
 
         db.session.commit()
@@ -423,7 +435,9 @@ def get_gallery_image(image_id):
     image = db.session.query(GalleryImage).get(image_id)
     if image is None:
         abort(404)
-    image_path = os.path.join(app.config['UPLOAD_FOLDER'], "gallery_uploads", image.image_url)
+    image_path = os.path.join(UPLOAD_FOLDER, image.image_url)
+    print(image_path)
+    logger.info(f"Image path: {image_path}")
     if not os.path.exists(image_path):
         abort(404)
     return send_file(image_path, mimetype='image')
@@ -433,4 +447,4 @@ def robots():
     return os.path.join(app.root_path, "static", "robots.txt")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", port=5000)
