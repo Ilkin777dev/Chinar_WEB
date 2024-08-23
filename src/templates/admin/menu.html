@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .menu-item .details {
+            flex-grow: 1;
+            margin-left: 20px;
+        }
+
+        .menu-item .actions button {
+            margin-left: 10px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .form-group button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Menu Management</h1>
+        <div>
+            <button onclick="openModal('createModal')">Add New Item</button>
+        </div>
+        <div class="menu-items" id="menuItems">
+            <!-- Menu items will be rendered here -->
+        </div>
+    </div>
+
+<!-- Create Modal -->
+<div id="createModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('createModal')">&times;</span>
+        <h2>Create New Menu Item</h2>
+        <form id="createForm">
+            <div class="form-group">
+                <label for="createMenu">Menu</label>
+                <select id="createMenu" name="menu" onchange="updateSections()">
+                    <option value="">Select Menu</option>
+                    <option value="menu1">Menu 1</option>
+                    <option value="menu2">Menu 2</option>
+                    <option value="menu3">Menu 3</option>
+                    <option value="menu4">Menu 4</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="createSection">Section</label>
+                <select id="createSection" name="section" disabled>
+                    <option value="">Select Section</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="createAzTitle">AZ Title</label>
+                <input type="text" id="createAzTitle" name="az_title" oninput="validateForm()">
+            </div>
+            <div class="form-group">
+                <label for="createEnTitle">EN Title</label>
+                <input type="text" id="createEnTitle" name="en_title" oninput="validateForm()">
+            </div>
+            <div class="form-group">
+                <label for="createPrice">Price</label>
+                <input type="text" id="createPrice" name="price" oninput="validateForm()">
+            </div>
+            <div class="form-group">
+                <button type="button" id="createButton" onclick="createMenuItem()" disabled>Create</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    const sections = {
+        menu1: ['appetizers', 'salads', 'soups', 'japanese_ramen', 'poultry', 'vegeterian', 'chinar currie', 'seafood', 'meat', 'rice & noodles', 'sushi roll', 'oshi sushi', 'nigiri-55 gr. or sashimi-50 gr.', 'chinar taco'],
+        menu2: ['exclusive_left', 'exclusive_right'],
+        menu3: ['dessert_left', 'dessert_right'],
+        menu4: ['chinar signature', 'long and strong', 'chinar heritage', 'virgin and bubbly', 'sake', 'gin 40 ml', 'tequila 40 ml', 'scotch and irish whisky, 40 ml', 'shokuzen', 'twisted classics', 'iced teas, 250 ml', 'lemonades, 200 ml', 'vermouth 40 ml', 'vodka, 40 ml', 'rum, 40 ml', 'liqueurs, 40 ml', 'beer', 'american whiskey, 40 ml']
+    };
+
+    function updateSections() {
+        const menu = document.getElementById('createMenu').value;
+        const sectionSelect = document.getElementById('createSection');
+        sectionSelect.innerHTML = '<option value="">Select Section</option>';
+
+        if (menu) {
+            sections[menu].forEach(section => {
+                const option = document.createElement('option');
+                option.value = section.toLowerCase().replace(/ /g, '_');
+                option.textContent = section;
+                sectionSelect.appendChild(option);
+            });
+            sectionSelect.disabled = false;
+        } else {
+            sectionSelect.disabled = true;
+        }
+
+        validateForm();
+    }
+
+    function validateForm() {
+        const menu = document.getElementById('createMenu').value;
+        const section = document.getElementById('createSection').value;
+        const azTitle = document.getElementById('createAzTitle').value;
+        const enTitle = document.getElementById('createEnTitle').value;
+        const price = document.getElementById('createPrice').value;
+        const createButton = document.getElementById('createButton');
+
+        createButton.disabled = !(menu && section && azTitle && enTitle && price);
+    }
+</script>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('editModal')">&times;</span>
+            <h2>Edit Menu Item</h2>
+            <form id="editForm">
+                <input type="hidden" id="editId" name="id">
+                <div class="form-group">
+                    <label for="editAzTitle">AZ Title</label>
+                    <input type="text" id="editAzTitle" name="az_title">
+                </div>
+                <div class="form-group">
+                    <label for="editEnTitle">EN Title</label>
+                    <input type="text" id="editEnTitle" name="en_title">
+                </div>
+                <div class="form-group">
+                    <label for="editPrice">Price</label>
+                    <input type="text" id="editPrice" name="price">
+                </div>
+                <div class="form-group">
+                    <button type="button" onclick="saveChanges()">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let menuData = {};
+    
+        // Fetch menu data from API
+        async function fetchMenuData() {
+            const response = await fetch('/api/menu');
+            menuData = await response.json();
+            renderMenuItems();
+        }
+    
+        // Render menu items
+        function renderMenuItems() {
+            const menuItemsContainer = document.getElementById('menuItems');
+            menuItemsContainer.innerHTML = '';
+    
+            Object.keys(menuData).forEach(menu => {
+                Object.keys(menuData[menu]).forEach(section => {
+                    if (Array.isArray(menuData[menu][section])) {
+                        menuData[menu][section].forEach((item, index) => {
+                            const menuItem = document.createElement('div');
+                            menuItem.className = 'menu-item';
+                            menuItem.innerHTML = `
+                                <div class="details">
+                                    <h3>${item.az_title} / ${item.en_title}</h3>
+                                    <p>Price: ${item.price}</p>
+                                </div>
+                                <div class="actions">
+                                    <button onclick="openEditModal('${menu}', '${section}', ${index})">Edit</button>
+                                    <button onclick="deleteMenuItem('${menu}', '${section}', ${index})">Delete</button>
+                                </div>
+                            `;
+                            menuItemsContainer.appendChild(menuItem);
+                        });
+                    }
+                });
+            });
+        }
+    
+        // Open modal
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+    
+        // Close modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+    
+        // Create new menu item
+        async function createMenuItem() {
+            const azTitle = document.getElementById('createAzTitle').value;
+            const enTitle = document.getElementById('createEnTitle').value;
+            const price = document.getElementById('createPrice').value;
+            const section = document.getElementById('createSection').value;
+            const menuNum = document.getElementById('createMenu').value;
+
+            const newItem = {
+                az_title: azTitle,
+                en_title: enTitle,
+                price: price
+            };
+
+            // Update local data
+            if (!menuData[menuNum][section]) {
+                menuData[menuNum][section] = [];
+            }
+            menuData[menuNum][section].push(newItem);
+            renderMenuItems();
+            closeModal('createModal');
+
+            // Send the entire updated JSON data to the backend
+            await fetch('/api/menu', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(menuData)
+            });
+        }
+    
+        // Open edit modal
+        function openEditModal(menu, section, index) {
+            const item = menuData[menu][section][index];
+            document.getElementById('editAzTitle').value = item.az_title;
+            document.getElementById('editEnTitle').value = item.en_title;
+            document.getElementById('editPrice').value = item.price;
+            document.getElementById('editId').value = JSON.stringify({ menu, section, index });
+            openModal('editModal');
+        }
+    
+        // Save changes to menu item
+        async function saveChanges() {
+            const azTitle = document.getElementById('editAzTitle').value;
+            const enTitle = document.getElementById('editEnTitle').value;
+            const price = document.getElementById('editPrice').value;
+            const { menu, section, index } = JSON.parse(document.getElementById('editId').value);
+    
+            const updatedItem = {
+                az_title: azTitle,
+                en_title: enTitle,
+                price: price
+            };
+    
+            // Update local data
+            menuData[menu][section][index] = updatedItem;
+            renderMenuItems();
+            closeModal('editModal');
+    
+            // Send the entire updated JSON data to the backend
+            await fetch('/api/menu', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(menuData)
+            });
+        }
+    
+        // Delete menu item
+        async function deleteMenuItem(menu, section, index) {
+            // Update local data
+            menuData[menu][section].splice(index, 1);
+            renderMenuItems();
+    
+            // Send the entire updated JSON data to the backend
+            await fetch('/api/menu', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(menuData)
+            });
+        }
+    
+        // Fetch menu data on page load
+        fetchMenuData();
+    </script>
+</body>
+</html>

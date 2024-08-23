@@ -4,11 +4,10 @@ from flask import Flask, flash, render_template, redirect, jsonify, send_file, r
 from werkzeug.utils import secure_filename
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 from environs import Env
-import logging
 
 sys.path.append("src")
 
-from models import Admin, Event, FormSubmission, GalleryImage, db
+from models import Admin, Event, FormSubmission, GalleryImage, Menu, db
 from utils import send_email
 
 env = Env()
@@ -34,7 +33,7 @@ login_manager = LoginManager(app)
 
 @login_manager.user_loader
 def load_user(user_id):
-    return db.session.query(Admin).get(user_id)
+    return db.session.get(Admin, user_id)
 
 def get_static_files():
     css_files = []
@@ -83,7 +82,23 @@ def gallery():
 
 @app.route("/menu")
 def menu():
-    return render_template("menu.html")
+
+    menu = db.session.query(Menu).first()
+
+    menu1 = menu.data["menu1"]
+    menu2_1 = menu.data["menu2"]["exclusive_left"]
+    menu2_2 = menu.data["menu2"]["exclusive_right"]
+    menu3_1 = menu.data["menu3"]["dessert_left"]
+    menu3_2 = menu.data["menu3"]["dessert_right"]
+    menu4 = menu.data["menu4"]
+
+    return render_template("menu.html",
+                            menu1=menu1,
+                            menu2_first_half=menu2_1,
+                            menu2_second_half=menu2_2,
+                            menu3_first_half=menu3_1,
+                            menu3_second_half=menu3_2,
+                            menu4=menu4)
 
 # AZ version
 
@@ -112,7 +127,24 @@ def gallery_az():
 
 @app.route("/menu_az")
 def menu_az():
-    return render_template("menu_az.html")
+
+    menu = db.session.query(Menu).first()
+
+    menu1 = menu.data["menu1"]
+    menu2_1 = menu.data["menu2"]["exclusive_left"]
+    menu2_2 = menu.data["menu2"]["exclusive_right"]
+    menu3_1 = menu.data["menu3"]["dessert_left"]
+    menu3_2 = menu.data["menu3"]["dessert_right"]
+    menu4 = menu.data["menu4"]
+
+
+    return render_template("menu_az.html",
+                            menu1=menu1,
+                            menu2_first_half=menu2_1,
+                            menu2_second_half=menu2_2,
+                            menu3_first_half=menu3_1,
+                            menu3_second_half=menu3_2,
+                            menu4=menu4)
 
 # Admin panel
 
@@ -177,7 +209,7 @@ def add_event():
                 az_title=title_az,
                 en_content=content_en,
                 az_content=content_az,
-                image=app.config['UPLOAD_FOLDER'] + filename
+                image=filename
             )
             db.session.add(event)
             db.session.commit()
@@ -212,7 +244,7 @@ def edit_event(event_id):
         if image:
             filename = secure_filename(image.filename)
             image.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            event.image = app.config['UPLOAD_FOLDER'] + filename
+            event.image = filename
 
         db.session.add(event)
         db.session.commit()
@@ -281,8 +313,7 @@ def get_event(event_id):
     img_url = db.session.query(Event).get(event_id).image
     if img_url is None:
         abort(404)
-    if img_url.startswith("volume"):
-        print("Volume image")
+    if event_id > 5:
         return send_file(os.path.join(UPLOAD_FOLDER, img_url), mimetype='image')
     return send_file("static/img/events_page/" + img_url, mimetype='image')
 
@@ -431,9 +462,37 @@ def get_gallery_image(image_id):
         abort(404)
     return send_file(image_path, mimetype='image')
 
+@app.get("/admin/menu")
+def admin_menu():
+    return render_template("admin/menu.html")
+
+@app.get('/api/menu')
+def get_menu():
+    menu = db.session.query(Menu).first()
+    return jsonify(menu.data)
+
+@app.post('/api/menu')
+def add_item_to_menu():
+    menu = db.session.query(Menu).first()
+    new_item = request.json
+    menu.data[new_item['menu']][new_item['section']] = new_item['item']
+
+    db.session.commit()
+
+    return jsonify(menu.data)
+
+@app.put('/api/menu')
+def update_menu():
+    new_menu_data = request.json
+    menu = db.session.query(Menu).first()
+    menu.data = new_menu_data
+    db.session.commit()
+    return jsonify({"message": "Menu updated successfully"})
+
 @app.route("/robots.txt")
 def robots():
-    return os.path.join(app.root_path, "static", "robots.txt")
+    return send_file("/static/robots.txt", mimetype="text/plain")
 
-# if __name__ == "__main__":
-#     app.run(debug=True, host="0.0.0.0", port=5000)
+
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0", port=5000)

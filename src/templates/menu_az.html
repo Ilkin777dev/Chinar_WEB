@@ -115,58 +115,12 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu1['appetizers'] %}
                                     <li>
-                                        <span>Mal əti karpaçio yuzu trüfel sousu ilə, 80 qr.</span><span>23 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Tayland üslublu krevet, 70 qr.</span><span>21 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Klassik krevet tempurası, 60 qr. (4 əd.)</span><span>21 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Xırtıldayan krevet popkorunu, manqo sousu ilə, 90 qr.</span><span>21 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Qızardılmış sümük iliyi, mal əti tartarı hoisin sousu ilə, 300 qr.</span><span>31 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Qızıl balıq karpaçio yuzu miso sousu ilə, 60 qr.</span><span>21 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Qızıl balıq tartarı nori konusunda, 50 qr.</span><span>14 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Krevet tartleti, 50 qr.</span><span>15 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Padron bibərləri 100 qr.</span><span>17 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Tokiyo üslübunda bükülmüş toyuqlu qioza, 90 qr. (5 əd.)</span><span>15 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Krevetli qioza - buxarda və ya qızardılmış, 80 qr. (6 əd.)</span><span>18 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Hisə verilmiş qızıl balıq bükməsi, 60 qr.</span><span>21 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Qızardılmış ördək ruleti, şirin-acılı sous ilə, 120 qr.</span><span>17 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Kərə yağında limon otu ilə infyuz edilmiş qarğıdalı, 200 qr.</span><span>24 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Mal ətindən çöp şişi, 80 qr.</span><span>16 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Toyuq yakitorisi, 80 qr.</span><span>14 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Acılı toyuq qanadları, 200 qr.</span><span>14 AZN</span>
-                                    </li>
-                                </ul>                                
+                                    {% endfor %}
+                                </ul>
                             </div>
                         </div>
 
@@ -178,31 +132,12 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu1['salads'] %}
                                     <li>
-                                        <span>Şərq üslubunda qızardılmış toyuq salatı, 150 qr.</span><span>17 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Xırtıldayan ördək salatı, xiyar ilə, 250 qr.</span><span>23 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Tayland üslubunda acılı ət salatı pomidor, xiyar ilə, 150 qr.</span><span>23 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Qoçucanq qlazurlu qızıl balıq, 100 qr.</span><span>28 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Ütülmüş qızıl balıq salatı lotus kökü çipsisi ilə, 120 qr.</span><span>25 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Tuna balığı salatı, ədəvalı küncüt sousu ilə, 100 qr.</span><span>25 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Körpə ispanaq trüfel yağı və krevet ilə, 150 qr.</span><span>35 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Lobster karpaçiosu yuzu trüfel sousu və yuzu qranit ilə, 70 qr.</span><span>58 AZN</span>
-                                    </li>
-                                </ul>                                
+                                    {% endfor %}
+                                </ul>
                             </div>
                         </div>
 
@@ -214,25 +149,12 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu1['soups'] %}
                                     <li>
-                                        <span>Tom yam şorbası toyuq ilə, 350 qr.</span><span>18 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Tom yam şorbası krevet ilə, 350 qr.</span><span>19 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Tom xa şorbası toyuq ilə, 350 qr.</span><span>17 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Acılı və turş şorba yengəc ilə, 400 qr.</span><span>18 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Acılı və turş şorba toyuq ilə, 400 qr.</span><span>17 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Şirin qarğıdalı şorbası yengəc ilə, 250 qr.</span><span>16 AZN</span>
-                                    </li>
-                                </ul>                                
+                                    {% endfor %}
+                                </ul>
                             </div>
                         </div>
 
@@ -244,12 +166,11 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu1['japanese_ramen'] %}
                                     <li>
-                                        <span>Miso kremli ramen</span><span>28 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Miso kremli acılı ramen </span><span>29 AZN</span>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -262,19 +183,12 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu1['poultry'] %}
                                     <li>
-                                        <span>Pekin sayağı bişən ördək, lavaş ilə, 185 qr.</span><span>50 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Aromatlı ördək, lavaş və gavalı sousu ilə, 185 qr.</span><span>54 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Çin turbo qazanında qızardılmış toyuq, qara paxla sousu ilə, 450 qr.</span><span>27 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>CHiNAR sayağı xırtıldayan toyuq, narlı şirin-turş sousu ilə, 250 qr.</span><span>25 AZN</span>
-                                    </li>
-                                </ul>                                
+                                    {% endfor %}
+                                </ul>
                             </div>
                         </div>
 
@@ -286,50 +200,12 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu1['vegeterian'] %}
                                     <li>
-                                        <span>Edamame (duzlu və ya acılı), 150 qr.</span><span>10/12 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Edamame acılı, sarımsaqlı sous ilə, 150 qr.</span><span>12 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Miso şorbası, tofu və dəniz yosunu ilə, 80 qr.</span><span>10 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Göyərti salatı, soğan və zəncəfilli lemon sousu ilə, 150 qr.</span><span>12 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Qızardılmış tofu salatı, 150 qr.</span><span>32 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Acılı yaşıl papaya şərq üslublu salat, 150 qr.</span><span>21 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Qovrulmuş badımcan salatı, 125 qr.</span><span>16 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Aysberq kahı salatı, 100 qr.</span><span>18 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Oşi suşi—qızardılmış göbələk unaqi sousu ilə, 120 qr.</span><span>18 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Tərəvəzli takos - avokado, edamame & miso sousu, 30 qr. (2 əd.)</span><span>9 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Tərəvəzli avakado bükməsi, 120 qr. (6 əd.)</span><span>14 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Tərəvəz karisi, 400 qr.</span><span>28 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Qızardılmış düyü tərəvəzlər ilə, 400 qr.</span><span>19 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Qızardılmış əriştə tərəvəzlər ilə, 400 qr.</span><span>21 AZN</span>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
-                                
                             </div>
                         </div>
 
@@ -341,16 +217,12 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu1['chinar currie'] %}
                                     <li>
-                                        <span>Malaziya üsulu ilə krevet karisi, 400 qr.</span><span>35 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Yaşıl toyuq karisi, 400 qr.</span><span>35 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Aromatlı ördək karisi, 400 qr.</span><span>46 AZN</span>
-                                    </li>
-                                </ul>                                
+                                    {% endfor %}
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -363,19 +235,12 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu1['seafood'] %}
                                     <li>
-                                        <span>Çin turbo qazanında qızardılan iri krevetlər, şitaki reyhan ilə, 450 qr.</span><span>32 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Sobada qızardılan qızıl balıq vasabi sousu ilə, 120 qr.</span><span>52 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Atlantik qara treska balığı, istiotlu miso sousu ilə, 150 qr.</span><span>72 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Qızardılmış xanı balığı halapeno zəncəfilli sous ilə, 150 qr.</span><span>78 AZN</span>
-                                    </li>
-                                </ul>                                
+                                    {% endfor %}
+                                </ul>
                             </div>
                         </div>
 
@@ -387,28 +252,12 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu1['meat'] %}
                                     <li>
-                                        <span>Çin turbo qazanında qızardılan can əti tərəvəzlərlə, 450 qr.</span><span>30 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Yüksək keyfiyyətli mal əti filesi, 150 qr.</span><span>48 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Black Angus - ribay mal əti steyki barbekü sousu ilə, 200 qr.</span><span>62 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Dana qabırğası soyalı acılı bibər sousu ilə, 200 qr.</span><span>59 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Yüksək keyfiyyətli Avstraliya vaqyu ribay mal əti steyki, 150 qr.</span><span>110 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Çili marinatlı antrikot tofu sousu ilə, 250 qr.</span><span>39 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Mal ətindən burger Asiya kələm salatı və acılı manqo mayonezi ilə, 300 qr.</span><span>25 AZN</span>
-                                    </li>
-                                </ul>                                
+                                    {% endfor %}
+                                </ul>
                             </div>
                         </div>
 
@@ -420,37 +269,12 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu1['rice & noodles'] %}
                                     <li>
-                                        <span>Keşniş souslu düyü toyuq əti ilə, 400 qr.</span><span>22 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Dəniz məhsulları ilə qızardılan düyü, 400 qr.</span><span>27 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>İstiotlu qızardılmış düyü krevet və toyuq - Nasi qorenq, 450 qr.</span><span>26 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Tayland üsulu ilə bişən toyuqlu və krevetli əriştə, 300 qr.</span><span>25 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Sinqapur əriştəsi - krevet, kalamar və toyuq, 300 qr.</span><span>25 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Qızardılan əriştə didilmiş ördək əti ilə, 300 qr.</span><span>27 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Qızardılan əriştə toyuq əti ilə, 300 qr.</span><span>22 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Qızardılan əriştə iri krevetlər ilə, 300 qr.</span><span>29 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Qızardılan əriştə mal əti ilə, 300 qr.</span><span>28 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Char kway teow - acılı krevetli əriştə tərəvəzlər ilə, 300 qr.</span><span>29 AZN</span>
-                                    </li>
-                                </ul>                                
+                                    {% endfor %}
+                                </ul>
                             </div>
                         </div>
 
@@ -462,58 +286,12 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu1['sushi roll'] %}
                                     <li>
-                                        <span>Kaliforniya yengəci suşisi, 140 qr. (6 əd.)</span><span>21 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Filadelfiya pendiri ilə qızıl balıq bükməsi, 140 qr. (8 əd.)</span><span>24 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Filadelfiya pendiri ilə hisə verilmiş qızıl balıq bükməsi, 140 qr. (8 əd.)</span><span>25 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Qızıl balıq və avokado bükməsi, 195 qr. (6 əd.)</span><span>21 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Spider Roll - Yumşaq qabıqlı yengəc tempurası, 195 qr. (6 əd.)</span><span>26 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Qaynar yağda bişmiş iri krevet suşi bükməsi, 195 qr. (6 əd.)</span><span>21 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>CHiNAR roll - qızıl balıq, tuna, xanı balığı, körpə qulançar, 150 qr. (6 əd.)</span><span>28 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>House Roll - qızıl balıq, yengəc və ağ trüfel yağı, 200 qr. (8 əd.)</span><span>29 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Dragon Roll– ilan balığı, avokado, xiyar, 150 qr. (8 əd.)</span><span>38 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Rainbow Roll-tuna, qızıl balıq, sarı quyruq, krevet, 200 qr. (8 əd.)</span><span>33 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Küncütlü sarı quyruq balığı bükməsi, 150 qr. (6 əd.)</span><span>34 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Tuna bükməsi acılı mango mayonezi ilə, 140 qr. (8 əd.)</span><span>23 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Acılı xırtıldayan bükmə qızıl balıq ilə, 160 qr. (6 əd.)</span><span>26 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Acılı xırtıldayan bükmə tuna balığı ilə, 160 qr. (6 əd.)</span><span>24 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Yengəcli tempura - qaymaqlı pendir, qızıl balıq, 150 qr. (8 əd.)</span><span>24 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Qızıl balıq və avokado tempura bükməsi, 160 qr. (6 əd.)</span><span>24 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Acılı teriyaki qızıl balıq tempura bükməsi, 160 qr. (5 əd.)</span><span>24 AZN</span>
-                                    </li>
-                                </ul>                                
+                                    {% endfor %}
+                                </ul>
                             </div>
                         </div>
 
@@ -525,15 +303,11 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu1['oshi sushi'] %}
                                     <li>
-                                        <span>Qızıl balıq oşisi ballı ponzu mayonezi ilə, 120 qr.</span><span>23 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Qızardılmış düyü,mal əti tartarı,qaz ciyəri əzməsi,teriyaki,150 qr.</span><span>21 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Vaqyu ribay mal ətindən oşi.</span><span>27 AZN</span>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -546,43 +320,12 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu1['nigiri-55 gr. or sashimi-50 gr.'] %}
                                     <li>
-                                        <span>Yaponiyadan, mavi üzgəcli yağsız tuna</span><span>75 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Yaponiyadan, mavi üzgəcli yarım yağlı tuna</span><span>95 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Yaponiyadan, mavi üzgəcli yağlı tuna</span><span>105 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Qızıl balıq</span><span>17 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Yüngül ütülmüş qızıl balığın yumşaq qarın hissəsindən</span><span>19 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Hisə verilmiş qızıl balıq</span><span>18 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Sarı quyruq balığı</span><span>26 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Tuna balığı</span><span>21 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>İlan balığı</span><span>32 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Xanı balığı</span><span>16 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Sweet shrimp – unikal özünəməxsus şirintəhər krevet Sweet shrimp</span><span>27 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Krevet</span><span>16 AZN</span>
-                                    </li>
-                                </ul>                                
+                                    {% endfor %}
+                                </ul>
                             </div>
                         </div>
 
@@ -594,12 +337,11 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu1['chinar taco'] %}
                                     <li>
-                                        <span>Marinated tuna & avocado, 30 gr. (2 pcs)</span><span>14 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Spicy salmon - creamy chili sauce & avocado, 30 gr. (2 pcs)</span><span>12 AZN</span>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -619,42 +361,11 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu2_first_half %}
                                     <li>
-                                        <span>Charred Edamame, 150 gr.</span><span>14 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Creamy Baked Tuna & Chips, 100 gr.</span><span>22 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Fresh Yuzu Sea Bass Ceviche, 80 gr.</span><span>31 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Japanese Beef Tartare with Spicy Yuzu Sauce, 80 gr.</span><span>29 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Salmon Tartare and Rice Cracker, 70 gr.</span><span>23 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Chicken Karaage, 150 gr.</span><span>17 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Fried Squid, 125 gr.</span><span>18 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Tuna Oshi with Wasabi Mayo, 120 gr.</span><span>22 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Crispy Kataifi Tuna Roll Spicy Mayo & Unagi Sauce, 200 gr.</span><span>27 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Japanese Blue Fin Tuna Toro Tataki, 100 gr.</span><span>155 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Japanese Wagyu Striploin A5 Tataki, Yuzu Truffle, 100 gr.</span><span>250 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Hokkaido Scallops With Plum Sauce, 70 gr.</span><span>59 AZN</span>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -665,39 +376,11 @@
                         <div class="menu_item">
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu2_second_half %}
                                     <li>
-                                        <span>Escargots with Chili Ponzu Butter, 120 gr.</span><span>59 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Teriyaki Glazed Foie Gras with Smoked Foie Gras Ice Cream, 110 gr.</span><span>57 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Smoked Miso Baby Chicken, 250 gr.</span><span>34 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Japanese Wagyu Striploin A5 with Ponzu & BBQ Sauce, 200 gr.</span><span>500 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Hamachi Kama, 125 gr.</span><span>62 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Thai Style Grilled Sea Bass, 150 gr.</span><span>46 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Ribeye with Wafu Sauce, 200 gr.</span><span>52 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Japanese Style Truffle Mushroom Hot Pot, 300 gr.</span><span>28 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>40 Days Dry Aged Tomahawk with Shiso Pesto & Yuzu Truffle, 1 kg.</span><span>265 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Grilled Tiger Prawn with Yuzu Kosho, 120 gr.</span><span>49 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Pecan Heaven, 200 gr.</span><span>24 AZN</span>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -714,42 +397,11 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu3_first_half %}
                                     <li>
-                                        <span>CH<span class="lower_case">i</span>NAR-ın Səkkiz Xəzinəsi, 480 gr.</span><span>38 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Üçlü Krem Brüle, 150 qr.—Şokolad, vanil və liçi</span><span>17 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Isti Şokolad Bükməsi, 200 qr.</span><span>16 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Oreolu Kəsmikli Kökə, 100 qr.—Moruq sousu və meyvələr</span><span>15 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Belçika üslubunda şokaladlı tort, 120 qr.</span><span>17 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Isti Xurma Pudinqi, 90 qr.</span><span>14 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Dolçelate Kremli Banan Bükməsi, 150 qr.</span><span>14 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Şərq Üslublu Çubuqlar, 170 qr.</span><span>12 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Qovrulmuş Düyü Dondurması, 100 qr.</span><span>16 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Liçili Pavlova, 200 qr.</span><span>16 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Şirin Darçınlı Dondurma Burqeri, 100 qr.</span><span>14 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Çay dəsti Baş aşpazın seçiminə görə, bir porsiya 3 ədəddən ibarətdir, 60 qr. </span><span>5 AZN</span>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -760,39 +412,11 @@
                         <div class="menu_item">
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu3_second_half %}
                                     <li>
-                                        <span>CH<span class="lower_case">i</span>NAR’s Fortune, 200 gr. (yeni)</span><span>16 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Miso Kremli Tiramisu, 150 qr. (yeni)</span><span>17 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Interaktiv Desert— Duck Shower, 200 qr. (yeni)</span><span>21 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Popkorn Dondurması, 100 qr. (yeni)</span><span>14 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Zeytun Yağı ilə İnfyuz Edilmiş Pana Kota, 100 gr. (yeni)</span><span>19 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>CH<span class="lower_case">i</span>NAR Moçi Dondurması, 110 gr.</span><span>14 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Qızardılmış dondurma 1 top, 130 qr.</span><span>11 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Çeşidli Dondurmalar, 150 qr.</span><span>14 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Çeşidli Şərbətlər, 150 qr.</span><span>12 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Mövsümi Meyvələr, 300 qr.</span><span>32 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Makaron, 60 gr. (3 ədəd)</span><span>12 AZN</span>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -809,39 +433,11 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu4["chinar signature"] %}
                                     <li>
-                                        <span>Zakuro, 150 ml</span><span>17 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Goma, 120 ml</span><span>17 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Scarlett, 110 ml</span><span>17 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Dragon Kiss, 160 ml</span><span>17 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Asian Cooler, 180 ml</span><span>17 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Mr.Beer, 150 ml</span><span>17 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Lychee Rhubarb Martini, 150 ml</span><span>17 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Pandan and Banana Martini, 120ml</span><span>17 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Plum Sour, 110 ml</span><span>17 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Rhubarb and Passion fruit martini, 150 ml</span><span>17 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Jasmine, 120ml</span><span>17 AZN</span>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -854,18 +450,11 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu4["long and strong"] %}
                                     <li>
-                                        <span>Long Break Up, 160 ml</span><span>19 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Asian Trader, 150 ml</span><span>19 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Carribean Spice, 190 ml</span><span>19 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Smoke Injection, 130ml</span><span>19 AZN</span>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -878,15 +467,11 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu4["chinar heritage"] %}
                                     <li>
-                                        <span>The Fruit Of Love, 150 ml</span><span>17 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Caravan, 150 ml</span><span>17 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>CH<span class="lower_case">i</span>NAR Breeze, 190 ml</span><span>17 AZN</span>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -899,24 +484,11 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu4["virgin and bubbly"] %}
                                     <li>
-                                        <span>Cinnamon Cooler, 185 ml</span><span>12 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Pink Lychee Coconut, 185 ml</span><span>12 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>The Fruit Of Love N/A, 185 ml</span><span>12 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>CH<span class="lower_case">i</span>NAR Goddess, 220 ml</span><span>12 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Oriental Express, 220 ml</span><span>12 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Baptista, 220 ml</span><span>12 AZN</span>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -929,24 +501,11 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu4["sake"] %}
                                     <li>
-                                        <span>Sake, Junmai Ginjo, Ougyoku, 200 ml</span><span>45 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Sake, Junmai Ginjo, Ougyoku, 400 ml</span><span>90 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Sake, Junmai Ginjo, Ougyoku, 720 ml (Btl.)</span><span>170 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Sake, Daiginjo, Honjirushi Sakura, 200 ml</span><span>60 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Sake, Daiginjo, Honjirushi Sakura, 400 ml</span><span>120 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Sake, Daiginjo, Honjirushi Sakura, 720 ml (Btl.)</span><span>200 AZN</span>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -959,30 +518,11 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu4["gin 40 ml"] %}
                                     <li>
-                                        <span>Bombay Sapphire, UK</span><span>10 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Beefeater, UK</span><span>10 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Tanqueray, UK</span><span>12 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Tanqueray 10, UK</span><span>14 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Hendrick’s, UK</span><span>14 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Bottega Bacur, Italy</span><span>14 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Monkey 47, Germany</span><span>27 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Gin Mare, Spain</span><span>17 AZN</span>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -995,27 +535,11 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu4["tequila 40 ml"] %}
                                     <li>
-                                        <span>Olmeca Blanco</span><span>11 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Patron Silver</span><span>21 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Patron Anejo</span><span>21 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>1942 Don Julio Tequila, Mexico (limited)</span><span>55 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Le Tribute, Mezcal, Mexico (limited)</span><span>23 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Don Julio Blanco</span><span>26 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Rooster Rojo Blanco</span><span>18 AZN</span>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -1028,66 +552,11 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu4["scotch and irish whisky, 40 ml"] %}
                                     <li>
-                                        <span>Chivas Regal 12</span><span>13 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Chivas Regal 18</span><span>21 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Chivas Regal 21</span><span>45 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Chivas Regal 25</span><span>67 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Chivas Regal 38</span><span>120 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Johnie Walker Black Label</span><span>11 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Johnie Walker Gold Label</span><span>20 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Johnie Walker Blue Label</span><span>50 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Jameson</span><span>10 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Glenmorangie 10</span><span>16 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Glenmorangie Quinta Ruban</span><span>21 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Glenfiddich 12</span><span>16 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Glenfiddich 18</span><span>25 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Ardbeg 10</span><span>24 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Lagavulin 16</span><span>21 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Talisker 10</span><span>18 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Macallan 12</span><span>34 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Macallan 15</span><span>45 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Monkey Shoulder</span><span>14 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Balvenie 12</span><span>19 AZN</span>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -1102,27 +571,11 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu4["shokuzen"] %}
                                     <li>
-                                        <span>Sakura highball, 160 ml</span><span>17 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Honeybush Bellini, 170 ml</span><span>17 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Almatini, 120 ml</span><span>17 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Strawberry Spritzer, 170 ml</span><span>17 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Japanese Negroni, 90 ml</span><span>17 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>GT, 150 ml</span><span>17 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Shipuchka, 170 ml</span><span>17 AZN</span>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -1135,27 +588,11 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu4["twisted classics"] %}
                                     <li>
-                                        <span>Old But Gold, 90 ml</span><span>17 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>CH<span class="lower_case">i</span>NAR Margarita, 110 ml</span><span>17 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Coconut Baiser Espresso Martini, 110 ml</span><span>17 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Tom Yum Bloody Mary, 150 ml</span><span>17 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Cranberry Caipirinha, 110 ml</span><span>17 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Mexican Mule, 120 ml</span><span>17 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Cucumber Pisco Sour, 120 ml</span><span>17 AZN</span>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -1168,18 +605,11 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu4["iced teas, 250 ml"] %}
                                     <li>
-                                        <span>Jasmine And Almond</span><span>10 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Raspberry And Passion fruit</span><span>10 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Peach And Camomile</span><span>10 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Mango And Ginger</span><span>10 AZN</span>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -1192,18 +622,11 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu4["lemonades, 200 ml"] %}
                                     <li>
-                                        <span>Watermelon</span><span>8 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Peach</span><span>8 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Passion fruit</span><span>8 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Strawberry</span><span>8 AZN</span>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -1216,9 +639,11 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu4["vermouth 40 ml"] %}
                                     <li>
-                                        <span>Bianco, Extra Dry, Rosso</span><span>8 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -1231,24 +656,11 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu4["vodka, 40 ml"] %}
                                     <li>
-                                        <span>Finlandia, Finland</span><span>9 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Organika, Russia</span><span>11 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Belvedere, Poland</span><span>11 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Beluga, Russia</span><span>11 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Grey Goose, France</span><span>11 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Haku, Rice Vodka, Japan (limited)</span><span>17 AZN</span>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -1261,24 +673,11 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu4["rum, 40 ml"] %}
                                     <li>
-                                        <span>Angostura Reserva, Trinidad and Tobago</span><span>9 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Angostura 1919, Trinidad and Tobago</span><span>14 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Havana 7, Cuba</span><span>15 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Sailor Jerry Spiced, Caribbean</span><span>9 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Gosling’s Family Reserve, Old rum</span><span>15 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Zacapa XO</span><span>40 AZN</span>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -1291,30 +690,11 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu4["liqueurs, 40 ml"] %}
                                     <li>
-                                        <span>Amaretto</span><span>9 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Baileys</span><span>9 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Kahlua</span><span>9 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Limoncello</span><span>10 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Porto</span><span>10 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Jagermeister</span><span>10 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Grappa di Moscato Di</span><span>11 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>El Gobernador Pisco</span><span>11 AZN</span>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -1327,21 +707,11 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu4["beer"] %}
                                     <li>
-                                        <span>Khirdalan draft, 400 ml</span><span>6 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Paulaner draft, 400 ml</span><span>11 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Heineken bottle, 330 ml</span><span>10 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Corona bottle, 330 ml</span><span>10 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Asahi bottle, 330 ml</span><span>12 AZN</span>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -1354,15 +724,11 @@
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
+                                    {% for item in menu4["american whiskey, 40 ml"] %}
                                     <li>
-                                        <span>Jack Daniels, Tennessee USA</span><span>10 AZN</span>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
-                                    <li>
-                                        <span>Bulleit Bourbon, USA</span><span>14 AZN</span>
-                                    </li>
-                                    <li>
-                                        <span>Woodford Reserve, Kentucky USA</span><span>14 AZN</span>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>

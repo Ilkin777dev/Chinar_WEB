@@ -60,7 +60,7 @@
             <a href="/admin">Back to admin panel</a>
         </div>
         {% for event in events %}
-            <div class="event" style="background-image: url('static/img/events_page/{{ event.image }}');">
+            <div class="event" style="background-image: url('/event/{{event.id}}')">
                 <h2>{{ event.en_title }}</h2>
                 <p>{{ event.en_content }}</p>
                 <div>

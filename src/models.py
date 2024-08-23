@@ -1,6 +1,8 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
-from sqlalchemy import Column, Integer, String, JSON
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.dialects.postgresql import JSON
+from sqlalchemy.ext.mutable import MutableDict
 
 db = SQLAlchemy()
 
@@ -41,3 +43,8 @@ class GalleryImage(db.Model):
 
     def __init__(self, image_url):
         self.image_url = image_url
+
+class Menu(db.Model):
+    __tablename__ = 'menu'
+    id = Column(Integer, primary_key=True)
+    data = db.Column(MutableDict.as_mutable(JSON))
