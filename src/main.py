@@ -20,6 +20,7 @@ SECRET_KEY = env("SECRET_KEY", os.urandom(24))
 DATABASE_URI = f"postgresql+psycopg2://{env('DB_USER', 'postgres')}:{env('DB_PASSWORD', 'postgres')}@{env('DB_HOST', 'localhost')}:{env('DB_PORT', '5432')}/{env('DB_NAME', 'postgres')}"
 UPLOAD_FOLDER = env("UPLOAD_FOLDER", "/chinarv/")
 OWNER_EMAIL = env("OWNER_EMAIL", "owner@localhost")
+EMAIL_RECEIVER = env("EMAIL_RECEIVER", "receiver@localhost")
 
 app = Flask(__name__)
 
@@ -352,7 +353,7 @@ def register_voucher():
     db.session.commit()
 
     message = f"Hello, Client {form_data['name']} {form_data['surname']} has requested {form_data['voucherCount']} vouchers, each for {form_data['voucherPrice']} AZN. The total price is {int(form_data['voucherCount']) * int(form_data['voucherPrice'])} AZN. The client's email address is {form_data['email']} and phone number is {form_data['phone']}."
-    send_email(OWNER_EMAIL, 
+    send_email(EMAIL_RECEIVER, 
                 message, 
                 "Voucher Request", 
                 "Voucher Request")
@@ -368,7 +369,7 @@ def register_voucher_az():
     db.session.commit()
 
     message = f"Hello, Client {form_data['name']} {form_data['surname']} has requested {form_data['voucherCount']} vouchers, each for {form_data['voucherPrice']} AZN. The total price is {int(form_data['voucherCount']) * int(form_data['voucherPrice'])} AZN. The client's email address is {form_data['email']} and phone number is {form_data['phone']}."
-    send_email(OWNER_EMAIL,
+    send_email(EMAIL_RECEIVER,
                 message, 
                 "Voucher Request", 
                 "Voucher Request")

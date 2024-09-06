@@ -172,7 +172,9 @@
         menu1: ['appetizers', 'salads', 'soups', 'japanese_ramen', 'poultry', 'vegeterian', 'chinar currie', 'seafood', 'meat', 'rice & noodles', 'sushi roll', 'oshi sushi', 'nigiri-55 gr. or sashimi-50 gr.', 'chinar taco'],
         menu2: ['exclusive_left', 'exclusive_right'],
         menu3: ['dessert_left', 'dessert_right'],
-        menu4: ['chinar signature', 'long and strong', 'chinar heritage', 'virgin and bubbly', 'sake', 'gin 40 ml', 'tequila 40 ml', 'scotch and irish whisky, 40 ml', 'shokuzen', 'twisted classics', 'iced teas, 250 ml', 'lemonades, 200 ml', 'vermouth 40 ml', 'vodka, 40 ml', 'rum, 40 ml', 'liqueurs, 40 ml', 'beer', 'american whiskey, 40 ml']
+        menu4: ['chinar signature', 'long and strong', 'chinar heritage', 'virgin and bubbly', 'sake', 'gin 40 ml', 'tequila 40 ml', 'scotch and irish whisky, 40 ml', 'scotch and irish whisky, 0.7 l', 'scotch and irish whisky, 1 l',
+        'shokuzen', 'twisted classics', 'iced teas, 250 ml', 'lemonades, 200 ml', 'vermouth 40 ml', 'vodka, 40 ml', 'rum, 40 ml', 'liqueurs, 40 ml', 'beer', 'american whiskey, 40 ml', 'japanese whiskey', 'cognac and armagnac',
+    'soft drink & mineral water', 'juice, 300 ml', 'freshly squeezed, 300 ml', 'coffee']
     };
 
     function updateSections() {
@@ -183,7 +185,6 @@
         if (menu) {
             sections[menu].forEach(section => {
                 const option = document.createElement('option');
-                option.value = section.toLowerCase().replace(/ /g, '_');
                 option.textContent = section;
                 sectionSelect.appendChild(option);
             });
@@ -251,6 +252,9 @@
             Object.keys(menuData).forEach(menu => {
                 Object.keys(menuData[menu]).forEach(section => {
                     if (Array.isArray(menuData[menu][section])) {
+                        var sectionHeader = document.createElement('h2');
+                        sectionHeader.textContent = section;
+                        menuItemsContainer.appendChild(sectionHeader);
                         menuData[menu][section].forEach((item, index) => {
                             const menuItem = document.createElement('div');
                             menuItem.className = 'menu-item';

@@ -24,6 +24,12 @@
             opacity: 1;
             transition: all 2s ease 0s;
         }
+
+        @media (max-width: 768px) {
+            .mob-no-m {
+                margin-bottom: 0 !important;
+            }
+        }
     </style>
     
     <!-- HEADER -->
@@ -353,7 +359,7 @@
                     <div class="menu_content_left">
                         <!-- MENU ITEM SEPARATION LEFT -->
 
-                        <div class="menu_item">
+                        <div class="mob-no-m menu_item">
                             <div class="menu_item_title">
                                 <h2>EXCLUSIVE MENU</h2>
                                 <br>
@@ -391,7 +397,7 @@
                     <div class="menu_content_left">
                         <!-- MENU ITEM SEPARATION LEFT -->
 
-                        <div class="menu_item">
+                        <div class="mob-no-m menu_item">
                             <div class="menu_item_title">
                                 <h2>DESSERT MENYU</h2>
                             </div>
@@ -531,7 +537,7 @@
 
                         <div class="menu_item">
                             <div class="menu_item_title">
-                                <h2>TEQUILA, 40 ML</h2>
+                                <h2>TEQUILA</h2>
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
@@ -553,6 +559,171 @@
                             <div class="menu_item_cont">
                                 <ul>
                                     {% for item in menu4["scotch and irish whisky, 40 ml"] %}
+                                    <li>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>SCOTCH AND IRISH WHISKY, 0.7 L</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    {% for item in menu4["scotch and irish whisky, 0.7 l"] %}
+                                    <li>
+                                        <span>{{ item['en_title'] }}</span><span>{{ item['price'] }}</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>SCOTCH AND IRISH WHISKY, 1 L</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    {% for item in menu4["scotch and irish whisky, 1 l"] %}
+                                    <li>
+                                        <span>{{ item['en_title'] }}</span><span>{{ item['price'] }}</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2 style="text-transform: uppercase;">Çin Qara Çayları</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    {% for item in menu4["chinese black teas"] %}
+                                    <li>
+                                        <span>{{ item['en_title'] }}</span><span>{{ item['price'] }}</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2 style="text-transform: uppercase;">CHINESE BLACK blends</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    {% for item in menu4["chinese black blends"] %}
+                                    <li>
+                                        <span>{{ item['en_title'] }}</span><span>{{ item['price'] }}</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2 style="text-transform: uppercase;">Chinese Oolong tea</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    {% for item in menu4["chinese oolong tea"] %}
+                                    <li>
+                                        <span>{{ item['en_title'] }}</span><span>{{ item['price'] }}</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2 style="text-transform: uppercase;">Jasmine Teas</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    {% for item in menu4["jasmine teas"] %}
+                                    <li>
+                                        <span>{{ item['en_title'] }}</span><span>{{ item['price'] }}</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2 style="text-transform: uppercase;">Chinese Speciality Green Teas</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    {% for item in menu4["chinese speciality green teas"] %}
+                                    <li>
+                                        <span>{{ item['en_title'] }}</span><span>{{ item['price'] }}</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2 style="text-transform: uppercase;">Organic Herbal Infusions</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    {% for item in menu4["organic herbal infusions"] %}
+                                    <li>
+                                        <span>{{ item['en_title'] }}</span><span>{{ item['price'] }}</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div> -->
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>AMERICAN WHISKEY</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    {% for item in menu4["american whiskey, 40 ml"] %}
+                                    <li>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>JAPANESE WHISKEY</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    {% for item in menu4["japanese whiskey"] %}
+                                    <li>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>COGNAC AND ARMAGNAC</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    {% for item in menu4["cognac and armagnac"] %}
                                     <li>
                                         <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
@@ -652,7 +823,7 @@
 
                         <div class="menu_item">
                             <div class="menu_item_title">
-                                <h2>VODKA, 40 ML</h2>
+                                <h2>VODKA</h2>
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
@@ -720,13 +891,88 @@
 
                         <div class="menu_item">
                             <div class="menu_item_title">
-                                <h2>AMERICAN WHISKEY, 40 ML</h2>
+                                <h2>SOFT DRINK & MINERAL WATER</h2>
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
-                                    {% for item in menu4["american whiskey, 40 ml"] %}
+                                    {% for item in menu4["soft drink & mineral water"] %}
                                     <li>
                                         <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>SOFT DRINK & MINERAL WATER</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    {% for item in menu4["soft drink & mineral water"] %}
+                                    <li>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>SOFT DRINK & MINERAL WATER</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    {% for item in menu4["soft drink & mineral water"] %}
+                                    <li>
+                                        <span>{{ item['az_title'] }}</span><span>{{ item['price'] }}</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>JUICE, 300 ML</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    {% for item in menu4["juice, 300 ml"] %}
+                                    <li>
+                                        <span>{{ item['en_title'] }}</span><span>{{ item['price'] }}</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>FRESHLY SQUEEZED, 300 ML</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    {% for item in menu4["freshly squeezed, 300 ml"] %}
+                                    <li>
+                                        <span>{{ item['en_title'] }}</span><span>{{ item['price'] }}</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>COFFEE (AVAILABLE HOT OR ICED)</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    {% for item in menu4["coffee"] %}
+                                    <li>
+                                        <span>{{ item['en_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
                                     {% endfor %}
                                 </ul>
