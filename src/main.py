@@ -1,6 +1,6 @@
 import os
 import sys
-from flask import Flask, flash, render_template, redirect, jsonify, send_file, request, abort
+from flask import Flask, Response, flash, render_template, redirect, jsonify, send_file, request, abort
 from werkzeug.utils import secure_filename
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 from environs import Env
@@ -347,12 +347,12 @@ def change_password():
 def register_voucher():
     form_data = request.form
 
-    submission = FormSubmission(data=form_data)
+    submission = FormSubmission(form_data)
 
     db.session.add(submission)
     db.session.commit()
 
-    message = f"Hello, Client {form_data['name']} {form_data['surname']} has requested {form_data['voucherCount']} vouchers, each for {form_data['voucherPrice']} AZN. The total price is {int(form_data['voucherCount']) * int(form_data['voucherPrice'])} AZN. The client's email address is {form_data['email']} and phone number is {form_data['phone']}."
+    message = f"Hello, Client {form_data['name']} {form_data['surname']} has requested {form_data['voucherCount']} vouchers, each for {form_data['voucherPrice']} AZN. The client's email address is {form_data['email']} and phone number is {form_data['phone']}."
     send_email(EMAIL_RECEIVER, 
                 message, 
                 "Voucher Request", 
@@ -363,12 +363,12 @@ def register_voucher():
 def register_voucher_az():
     form_data = request.form
 
-    submission = FormSubmission(data=form_data)
+    submission = FormSubmission(form_data)
 
     db.session.add(submission)
     db.session.commit()
 
-    message = f"Hello, Client {form_data['name']} {form_data['surname']} has requested {form_data['voucherCount']} vouchers, each for {form_data['voucherPrice']} AZN. The total price is {int(form_data['voucherCount']) * int(form_data['voucherPrice'])} AZN. The client's email address is {form_data['email']} and phone number is {form_data['phone']}."
+    message = f"Hello, Client {form_data['name']} {form_data['surname']} has requested {form_data['voucherCount']} vouchers, each for {form_data['voucherPrice']} AZN. The client's email address is {form_data['email']} and phone number is {form_data['phone']}."
     send_email(EMAIL_RECEIVER,
                 message, 
                 "Voucher Request", 
@@ -378,6 +378,7 @@ def register_voucher_az():
 @app.post("/form/submission")
 def submit_form():
     data = request.form
+    send_email(EMAIL_RECEIVER, f"New form submission: {data}", "Form Submission", "Form Submission")
     form_submission = FormSubmission(data)
     db.session.add(form_submission)
     db.session.commit()
@@ -490,9 +491,14 @@ def update_menu():
     db.session.commit()
     return jsonify({"message": "Menu updated successfully"})
 
-@app.route("/robots.txt")
-def robots():
-    return send_file("/static/robots.txt", mimetype="text/plain")
+@app.route('/robots.txt')
+def robots_txt():
+    content = """
+    User-agent: *
+    Disallow: /admin/
+    Allow: /
+    """
+    return Response(content, mimetype='text/plain')
 
 
 if __name__ == "__main__":
