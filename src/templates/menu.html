@@ -316,6 +316,21 @@
                             </div>
                         </div>
 
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>CRISPY OSHI SUSHI</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    {% for item in menu1['crispy oshi sushi'] %}
+                                    <li>
+                                        <span>{{ item['en_title'] }}</span><span>{{ item['price'] }}</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
                         <!-- MENU ITEM SEPARATION RIGHT -->
 
                         <div class="menu_item">
@@ -433,7 +448,7 @@
 
                         <div class="menu_item">
                             <div class="menu_item_title">
-                                <h2>CH<span class="lower_case">i</span>NAR SIGNATURE</h2>
+                                <h2>MYSTERY OF CH<span class="lower_case">i</span>NAR</h2>
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
@@ -472,6 +487,21 @@
                             <div class="menu_item_cont">
                                 <ul>
                                     {% for item in menu4["chinar heritage"] %}
+                                    <li>
+                                        <span>{{ item['en_title'] }}</span><span>{{ item['price'] }}</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>LOWBALLS</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    {% for item in menu4["lowballs"] %}
                                     <li>
                                         <span>{{ item['en_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
@@ -535,7 +565,7 @@
 
                         <div class="menu_item">
                             <div class="menu_item_title">
-                                <h2>TEQUILA</h2>
+                                <h2>TEQUILA & MEZCAL</h2>
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
@@ -552,41 +582,11 @@
 
                         <div class="menu_item">
                             <div class="menu_item_title">
-                                <h2>SCOTCH AND IRISH WHISKY, 40 ML</h2>
+                                <h2>SCOTCH AND IRISH WHISKY</h2>
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
                                     {% for item in menu4["scotch and irish whisky, 40 ml"] %}
-                                    <li>
-                                        <span>{{ item['en_title'] }}</span><span>{{ item['price'] }}</span>
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="menu_item">
-                            <div class="menu_item_title">
-                                <h2>SCOTCH AND IRISH WHISKY, 0.7 L</h2>
-                            </div>
-                            <div class="menu_item_cont">
-                                <ul>
-                                    {% for item in menu4["scotch and irish whisky, 0.7 l"] %}
-                                    <li>
-                                        <span>{{ item['en_title'] }}</span><span>{{ item['price'] }}</span>
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="menu_item">
-                            <div class="menu_item_title">
-                                <h2>SCOTCH AND IRISH WHISKY, 1 L</h2>
-                            </div>
-                            <div class="menu_item_cont">
-                                <ul>
-                                    {% for item in menu4["scotch and irish whisky, 1 l"] %}
                                     <li>
                                         <span>{{ item['en_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
@@ -717,7 +717,7 @@
 
                         <div class="menu_item">
                             <div class="menu_item_title">
-                                <h2>COGNAC AND ARMAGNAC</h2>
+                                <h2>BRANDY, COGNAC & ARMAGNAC</h2>
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
@@ -804,7 +804,7 @@
 
                         <div class="menu_item">
                             <div class="menu_item_title">
-                                <h2>VERMOUTH, 40 ML</h2>
+                                <h2>VERMOUTH, 80 ML</h2>
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
@@ -838,7 +838,7 @@
 
                         <div class="menu_item">
                             <div class="menu_item_title">
-                                <h2>RUM, 40 ML</h2>
+                                <h2 style="text-transform: uppercase;">RUM & Cachaça , 40 ML</h2>
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
@@ -860,6 +860,36 @@
                             <div class="menu_item_cont">
                                 <ul>
                                     {% for item in menu4["liqueurs, 40 ml"] %}
+                                    <li>
+                                        <span>{{ item['en_title'] }}</span><span>{{ item['price'] }}</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>BITTER, 40 ML</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    {% for item in menu4["bitter"] %}
+                                    <li>
+                                        <span>{{ item['en_title'] }}</span><span>{{ item['price'] }}</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>ARTISIAN SELECTIONS, 40 ML</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    {% for item in menu4["artisian selections"] %}
                                     <li>
                                         <span>{{ item['en_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
@@ -904,7 +934,7 @@
 
                         <div class="menu_item">
                             <div class="menu_item_title">
-                                <h2>JUICE, 300 ML</h2>
+                                <h2>CHILLED JUICES</h2>
                             </div>
                             <div class="menu_item_cont">
                                 <ul>
@@ -939,6 +969,36 @@
                             <div class="menu_item_cont">
                                 <ul>
                                     {% for item in menu4["coffee"] %}
+                                    <li>
+                                        <span>{{ item['en_title'] }}</span><span>{{ item['price'] }}</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>CIGARETTES</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    {% for item in menu4["cigarettes"] %}
+                                    <li>
+                                        <span>{{ item['en_title'] }}</span><span>{{ item['price'] }}</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="menu_item">
+                            <div class="menu_item_title">
+                                <h2>CIGARS</h2>
+                            </div>
+                            <div class="menu_item_cont">
+                                <ul>
+                                    {% for item in menu4["cigars"] %}
                                     <li>
                                         <span>{{ item['en_title'] }}</span><span>{{ item['price'] }}</span>
                                     </li>
